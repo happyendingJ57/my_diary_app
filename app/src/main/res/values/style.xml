@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="CustomToolBar">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">?actionBarSize</item>
+        <item name="android:background">?colorPrimary</item>
+    </style>
+
+    <style name="Theme.App.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar">
+        <item name="colorControlNormal">@color/md_white_1000</item>
+        <item name="android:textColorSecondary">@color/md_white_1000</item>
+        <item name="android:fontFamily">@font/quicksand_medium</item>
+    </style>
+
+    <style name="Theme.App.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
+
+    <style name="roundedImageStory">
+        <item name="cornerSize">@dimen/dp_2</item>
+    </style>
+
+    <style name="TextAppearance.MyTheme.Headline10" parent="TextAppearance.MaterialComponents.Headline5">
+        <item name="fontFamily">@font/quicksand_medium</item>
+    </style>
+
+    <style name="roundedImage">
+        <item name="cornerSize">@dimen/dp_4</item>
+    </style>
+</resources>

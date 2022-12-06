@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="diaryModel"
+            type="com.example.app_my_diary.model.DiaryModel" />
+
+        <variable
+            name="ispreviousEnabled"
+            type="boolean" />
+
+        <variable
+            name="isnextEnabled"
+            type="boolean" />
+
+        <import type="android.view.View" />
+    </data>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/white">
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar"
+            style="@style/CustomToolBar"
+            android:background="@color/colorAccent"
+            android:theme="@style/Theme.App.AppBarOverlay"
+            app:contentInsetStartWithNavigation="@dimen/dp_4"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:menu="@menu/menu_detail_diary"
+            app:navigationIcon="@drawable/ic_toolbar_back"
+            app:popupTheme="@style/Theme.App.PopupOverlay"
+            app:titleTextAppearance="?textAppearanceHeadline6"
+            app:titleTextColor="@color/md_white_1000" />
+
+        <TextView
+            android:id="@+id/tvDate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/toolbar"
+            android:layout_marginLeft="@dimen/dp_15"
+            android:fontFamily="@font/quicksand_bold"
+            android:setDiaryTime="@{diaryModel.time}"
+            android:textAppearance="@style/TextAppearance.AppCompat.Body2"
+            android:textColor="@color/colorAccent" />
+
+
+        <com.example.app_my_diary.CustomScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@id/tvDate"
+            app:layout_anchor="@id/tvDate"
+            app:layout_anchorGravity="bottom|center_horizontal"
+            app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/etTitle"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/tvDate"
+                    android:layout_marginHorizontal="@dimen/dp_15"
+                    android:layout_marginTop="@dimen/dp_10"
+                    android:background="@drawable/bg_title_add_diary_love"
+                    android:fontFamily="@font/quicksand_bold"
+                    android:paddingVertical="@dimen/dp_5"
+                    android:paddingLeft="@dimen/dp_10"
+                    android:text="@{diaryModel.title}"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Body2"
+                    android:textColor="#263238"
+                    android:textColorHint="#C086DF" />
+
+                <TextView
+                    android:id="@+id/etDescription"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/etTitle"
+                    android:layout_marginHorizontal="@dimen/dp_15"
+                    android:layout_marginTop="@dimen/dp_10"
+                    android:background="@drawable/bg_body_add_diary_love"
+                    android:fontFamily="@font/quicksand_bold"
+                    android:paddingVertical="@dimen/dp_10"
+                    android:paddingLeft="@dimen/dp_10"
+                    android:text="@{diaryModel.description}"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Body2"
+                    android:textColorHint="#C086DF" />
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/rvPickPhoto"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/etDescription"
+                    android:layout_marginHorizontal="@dimen/dp_15"
+                    android:background="@drawable/bg_image_add_diary_love" />
+            </LinearLayout>
+        </com.example.app_my_diary.CustomScrollView>
+
+
+        <RelativeLayout
+            android:id="@+id/btnPrevious"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_margin="@dimen/dp_10">
+
+            <ImageView
+                android:id="@+id/imagePrevious"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@{ispreviousEnabled ? @drawable/ic_previous_2svg:@drawable/ic_previous_no_black}" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_toRightOf="@id/imagePrevious"
+                android:fontFamily="@font/quicksand_bold"
+                android:text="@string/string_previous"
+                android:textAppearance="@style/TextAppearance.AppCompat.Body2"
+                android:textColor="@{ispreviousEnabled ? @color/black :@color/color_enabled}" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/btnNext"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentBottom="true"
+            android:layout_margin="@dimen/dp_10">
+
+            <TextView
+                android:id="@+id/tvNext"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:fontFamily="@font/quicksand_bold"
+                android:text="@string/string_next"
+                android:textAppearance="@style/TextAppearance.AppCompat.Body2"
+                android:textColor="@{isnextEnabled ?@color/black : @color/color_enabled}" />
+
+            <ImageView
+                android:id="@+id/imageNext"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toRightOf="@id/tvNext"
+                android:src="@{isnextEnabled?@drawable/ic_next_black:@drawable/ic_next}" />
+        </RelativeLayout>
+
+    </RelativeLayout>
+
+</layout>

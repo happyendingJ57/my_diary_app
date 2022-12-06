@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_main_graph"
+    app:startDestination="@+id/nav_home">
+    <fragment
+        android:id="@+id/nav_home"
+        android:name="com.example.app_my_diary.home.HomeFragment"
+        tools:layout="@layout/fragment_home" />
+    <fragment
+        android:id="@+id/calendarFragment"
+        android:name="com.hola360.crushlovecalculator.ui.lovediary.calendar.CalendarFragment"
+        android:label="Calendar" />
+
+    <action
+        android:id="@+id/action_global_calendarFragment"
+        app:destination="@id/calendarFragment" />
+    <fragment
+        android:id="@+id/searchDiaryFragment"
+        android:name="com.hola360.crushlovecalculator.ui.lovediary.search.SearchDiaryFragment"
+        android:label="Search Diary" />
+
+    <action
+        android:id="@+id/action_global_searchDiaryFragment"
+        app:destination="@id/searchDiaryFragment" />
+
+</navigation>
