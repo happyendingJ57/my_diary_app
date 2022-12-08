@@ -1,5 +1,6 @@
 package com.example.app_my_diary.viewmodel
 
+import android.app.Application
 import androidx.lifecycle.*
 import com.example.app_my_diary.app.App
 import com.example.app_my_diary.model.PhotoModel
@@ -10,7 +11,7 @@ import com.example.app_my_diary.utils.DataResponse
 import com.example.app_my_diary.utils.LoadDataStatus
 import kotlinx.coroutines.launch
 
-class PickPhotoViewModel(val app: App) : ViewModel() {
+class PickPhotoViewModel(val app: Application) : ViewModel() {
     private val repository = MediaStoreRepository(app)
     val allImages = mutableListOf<PhotoModel>()
     var curAlbumId = -1L
@@ -102,7 +103,7 @@ class PickPhotoViewModel(val app: App) : ViewModel() {
     }
 
 
-    class Factory(private val app: App) : ViewModelProvider.NewInstanceFactory() {
+    class Factory(private val app: Application) : ViewModelProvider.NewInstanceFactory() {
         override fun <T : ViewModel> create(modelClass: Class<T>): T {
             if (modelClass.isAssignableFrom(PickPhotoViewModel::class.java)) {
                 return PickPhotoViewModel(app) as T

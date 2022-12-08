@@ -50,7 +50,7 @@ class AddDiaryLoveDialog : BaseViewModelDialogFragment<LayoutDiaryLoveDialogBind
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-//        setStyle(STYLE_NORMAL, R.style.Theme_App_Dialog_FullScreen)
+        setStyle(STYLE_NORMAL, R.style.Theme_App_Dialog_FullScreen)
         mTitle = requireArguments().getString(KEY_TITLE)
         if (diaryModel != null) {
             isImageListNotEmpty = Utils.jsonToList(diaryModel!!.images).isNotEmpty()

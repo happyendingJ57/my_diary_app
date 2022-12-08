@@ -15,7 +15,7 @@ import com.example.app_my_diary.utils.clickWithDebounce
 class ResultDiaryAdapter : RecyclerView.Adapter<BaseViewHolder>() {
 
     val data = mutableListOf<DiaryModel>()
-    lateinit var listener : OnItemClickListener
+     var listener : OnItemClickListener? = null
 
     fun updateData(newData: MutableList<DiaryModel>) {
         if (newData.isNotEmpty()) {
@@ -38,7 +38,7 @@ class ResultDiaryAdapter : RecyclerView.Adapter<BaseViewHolder>() {
                     diaryModel = data[position]
                 }
                 root.clickWithDebounce{
-                    listener.onDiaryItemClickListener(data[position])
+                    listener?.onDiaryItemClickListener(data[position])
                 }
             }
         }

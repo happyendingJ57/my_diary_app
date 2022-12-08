@@ -1,6 +1,7 @@
 package com.example.app_my_diary.repository
 
 
+import android.app.Application
 import com.example.app_my_diary.R
 import com.example.app_my_diary.app.App
 import com.example.app_my_diary.model.PhotoModel
@@ -8,7 +9,7 @@ import com.example.app_my_diary.utils.PhotoLoader
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
 
-class MediaStoreRepository(val app: App) {
+class MediaStoreRepository(val app: Application) {
 
     suspend fun getImages(): List<PhotoModel> = withContext(Dispatchers.Default) {
         PhotoLoader.loadAllImages(app)

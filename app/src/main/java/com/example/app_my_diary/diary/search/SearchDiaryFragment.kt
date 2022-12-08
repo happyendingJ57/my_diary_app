@@ -10,6 +10,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.app_my_diary.R
 import com.example.app_my_diary.base.BaseViewModelFragment
 import com.example.app_my_diary.databinding.FragmentSearchDiaryBinding
+import com.example.app_my_diary.diary.diarydetaildialog.DiaryDetailDialog
 import com.example.app_my_diary.diary.search.adapter.ResultDiaryAdapter
 import com.example.app_my_diary.model.DiaryModel
 import com.example.app_my_diary.utils.DataResponse
@@ -66,6 +67,8 @@ class SearchDiaryFragment : BaseViewModelFragment<FragmentSearchDiaryBinding>(),
                     }
                 })
             }
+
+            mAdapter.listener = this@SearchDiaryFragment
         }
     }
 
@@ -95,6 +98,9 @@ class SearchDiaryFragment : BaseViewModelFragment<FragmentSearchDiaryBinding>(),
     }
 
     override fun onDiaryItemClickListener(diaryModel: DiaryModel) {
-        ToastUtils.getInstance(mainActivity).showToast(diaryModel.diaryId.toString())
+        val dialog = DiaryDetailDialog.create(diaryModel.diaryId,getString(R.string.string_read_diary),-1)
+        if(!dialog.isAdded){
+            dialog.show(parentFragmentManager,"detailDiary")
+        }
     }
 }

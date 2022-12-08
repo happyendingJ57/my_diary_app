@@ -1,6 +1,7 @@
 package com.example.app_my_diary.dialog
 
 import android.annotation.SuppressLint
+import android.app.Application
 import android.os.Build
 import android.os.Bundle
 import androidx.annotation.RequiresApi
@@ -108,7 +109,7 @@ class PickPhotoStoryDialog : BasePickPhotoDialog<DialogPickPhotoStoryBinding>(),
     }
 
     override fun initViewModel() {
-        val factory = PickPhotoViewModel.Factory(mainActivity.application as App)
+        val factory = PickPhotoViewModel.Factory(mainActivity.application as Application)
         mViewModel = ViewModelProvider(this, factory)[PickPhotoViewModel::class.java]
         mViewModel.mPickPhotoModel.observe(this) {
             it?.let {
@@ -117,7 +118,7 @@ class PickPhotoStoryDialog : BasePickPhotoDialog<DialogPickPhotoStoryBinding>(),
                     mLayoutManager = GridLayoutManager(
                         requireActivity(),
                         if (body.pickPhotoType == PickPhotoType.Photo) {
-                            app.photoColumns + 1
+                            3
                         } else {
                             1
                         }

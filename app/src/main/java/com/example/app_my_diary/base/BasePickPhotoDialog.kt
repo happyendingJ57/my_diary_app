@@ -1,11 +1,13 @@
 package com.example.app_my_diary.base
 
+import android.app.Application
 import android.os.Bundle
 import android.view.KeyEvent
 import android.view.View
 import android.widget.LinearLayout
 import androidx.databinding.ViewDataBinding
 import androidx.recyclerview.widget.GridLayoutManager
+import com.example.app_my_diary.R
 import com.example.app_my_diary.app.App
 import com.example.app_my_diary.viewmodel.PickPhotoViewModel
 
@@ -13,12 +15,10 @@ abstract class BasePickPhotoDialog<V : ViewDataBinding?> : BaseFullAlertDialog<V
 
     lateinit var mViewModel: PickPhotoViewModel
     lateinit var mLayoutManager: GridLayoutManager
-    lateinit var app: App
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-//        setStyle(STYLE_NORMAL, R.style.Theme_App_Dialog_FullScreen)
-        app = requireActivity().application as App
+        setStyle(STYLE_NORMAL, R.style.Theme_App_Dialog_FullScreen)
         initViewModel()
     }
 

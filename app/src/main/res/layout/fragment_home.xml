@@ -4,13 +4,27 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:gravity="center">
+        android:gravity="center"
+        android:orientation="vertical">
 
-        <Button
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingVertical="@dimen/dp_12"
+            android:text="How do you feel today?"
+            android:textColor="@color/colorAccent"
+            android:textSize="@dimen/dp_32" />
+
+        <TextView
+            android:paddingVertical="@dimen/dp_20"
+            android:paddingHorizontal="35dp"
             android:id="@+id/startDiary"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="startDiary" />
+            android:background="@drawable/bg_text_home"
+            android:text="Write Diary"
+            android:textStyle="bold"
+            android:textColor="@color/white" />
 
     </LinearLayout>
 
