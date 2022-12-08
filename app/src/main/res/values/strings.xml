@@ -265,7 +265,7 @@
     <string name="string_lovetime_emoij_no_internet">No internet</string>
     <string name="string_lovetime_emoij_you_offline">You are offine. Please check your internet connection an try again</string>
     <string name="action_download">Download</string>
-    <string name="download_theme">You need to download the theme to use it</string>
+    <string name="download_theme">You need to download the theme to use it </string>
     <string name="msg_downloading">Downloading %s</string>
     <string name="msg_download_failed">Download failed.</string>
     <string name="msg_update_theme">Update theme successfully</string>
