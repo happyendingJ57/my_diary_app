@@ -1,4 +1,4 @@
-package com.hola360.crushlovecalculator.data.utils
+package com.example.app_my_diary.utils
 
 
 sealed class DataResponse<T> constructor(val loadDataStatus: LoadDataStatus) {

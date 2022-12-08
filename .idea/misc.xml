@@ -26,14 +26,44 @@
         <entry key="..\:/app_my_diary/app/src/main/res/drawable-v24/ic_story_more.xml" value="0.222" />
         <entry key="..\:/app_my_diary/app/src/main/res/drawable-v24/ic_toolbar_back.xml" value="0.222" />
         <entry key="..\:/app_my_diary/app/src/main/res/drawable-v24/line_divide_photo_album.xml" value="0.222" />
+        <entry key="..\:/app_my_diary/app/src/main/res/drawable/bg_bottom_sheet.xml" value="0.222" />
+        <entry key="..\:/app_my_diary/app/src/main/res/drawable/bg_calendar.xml" value="0.222" />
+        <entry key="..\:/app_my_diary/app/src/main/res/drawable/bg_confirm_cancel.xml" value="0.222" />
+        <entry key="..\:/app_my_diary/app/src/main/res/drawable/bg_pick_story_image_text.xml" value="0.222" />
+        <entry key="..\:/app_my_diary/app/src/main/res/drawable/bg_profile_update_left.xml" value="0.222" />
+        <entry key="..\:/app_my_diary/app/src/main/res/drawable/bg_start_header_toast.xml" value="0.222" />
+        <entry key="..\:/app_my_diary/app/src/main/res/drawable/bg_story_add_image.xml" value="0.222" />
+        <entry key="..\:/app_my_diary/app/src/main/res/drawable/bg_story_button_done.xml" value="0.222" />
+        <entry key="..\:/app_my_diary/app/src/main/res/drawable/bg_story_detail_date.xml" value="0.222" />
+        <entry key="..\:/app_my_diary/app/src/main/res/drawable/bg_story_pick_photo_bottom_layout.xml" value="0.222" />
+        <entry key="..\:/app_my_diary/app/src/main/res/drawable/ic_baseline_close_24.xml" value="0.222" />
+        <entry key="..\:/app_my_diary/app/src/main/res/drawable/ic_baseline_keyboard_arrow_down_32.xml" value="0.21" />
+        <entry key="..\:/app_my_diary/app/src/main/res/drawable/ic_baseline_keyboard_arrow_up_32.xml" value="0.21" />
+        <entry key="..\:/app_my_diary/app/src/main/res/drawable/ic_calendar.xml" value="0.222" />
+        <entry key="..\:/app_my_diary/app/src/main/res/drawable/ic_default_image.xml" value="0.222" />
+        <entry key="..\:/app_my_diary/app/src/main/res/drawable/ic_my_photo_close.xml" value="0.21" />
+        <entry key="..\:/app_my_diary/app/src/main/res/drawable/ic_my_photo_radio_button_unchecked.xml" value="0.222" />
+        <entry key="..\:/app_my_diary/app/src/main/res/drawable/ic_my_photo_radio_check.xml" value="0.222" />
+        <entry key="..\:/app_my_diary/app/src/main/res/drawable/ic_next.xml" value="0.1085" />
+        <entry key="..\:/app_my_diary/app/src/main/res/drawable/ic_next_black.xml" value="0.1085" />
+        <entry key="..\:/app_my_diary/app/src/main/res/drawable/ic_pick_story_image_unchecked.xml" value="0.222" />
+        <entry key="..\:/app_my_diary/app/src/main/res/drawable/ic_previous_2svg.xml" value="0.1085" />
+        <entry key="..\:/app_my_diary/app/src/main/res/drawable/ic_previous_no_black.xml" value="0.1085" />
+        <entry key="..\:/app_my_diary/app/src/main/res/drawable/search_view_cursor.xml" value="0.222" />
         <entry key="..\:/app_my_diary/app/src/main/res/layout/activity_main.xml" value="0.3546875" />
+        <entry key="..\:/app_my_diary/app/src/main/res/layout/dialog_pick_photo_story.xml" value="0.3546875" />
         <entry key="..\:/app_my_diary/app/src/main/res/layout/dialog_story_detail.xml" value="0.3546875" />
         <entry key="..\:/app_my_diary/app/src/main/res/layout/fragment_home.xml" value="0.15418502202643172" />
         <entry key="..\:/app_my_diary/app/src/main/res/layout/fragment_love_diary.xml" value="0.3546875" />
+        <entry key="..\:/app_my_diary/app/src/main/res/layout/fragment_search_diary.xml" value="0.23645833333333333" />
         <entry key="..\:/app_my_diary/app/src/main/res/layout/item_action_popup.xml" value="0.3546875" />
         <entry key="..\:/app_my_diary/app/src/main/res/layout/item_album.xml" value="0.3546875" />
         <entry key="..\:/app_my_diary/app/src/main/res/layout/item_diary.xml" value="0.3546875" />
         <entry key="..\:/app_my_diary/app/src/main/res/layout/item_photo.xml" value="0.3546875" />
+        <entry key="..\:/app_my_diary/app/src/main/res/layout/item_pick_photo.xml" value="0.3546875" />
+        <entry key="..\:/app_my_diary/app/src/main/res/layout/item_read_diary_love.xml" value="0.23645833333333333" />
+        <entry key="..\:/app_my_diary/app/src/main/res/layout/item_search_diary.xml" value="0.23645833333333333" />
+        <entry key="..\:/app_my_diary/app/src/main/res/layout/item_search_diary_date.xml" value="0.23645833333333333" />
         <entry key="..\:/app_my_diary/app/src/main/res/layout/item_story_detail.xml" value="0.3546875" />
         <entry key="..\:/app_my_diary/app/src/main/res/layout/item_story_image.xml" value="0.3546875" />
         <entry key="..\:/app_my_diary/app/src/main/res/layout/item_story_image_picking.xml" value="0.3546875" />

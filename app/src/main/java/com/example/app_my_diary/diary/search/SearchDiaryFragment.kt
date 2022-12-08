@@ -1,4 +1,4 @@
-package com.hola360.crushlovecalculator.ui.lovediary.search
+package com.example.app_my_diary.diary.search
 
 import android.text.Editable
 import android.text.TextWatcher
@@ -7,15 +7,15 @@ import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import com.hola360.crushlovecalculator.R
-import com.hola360.crushlovecalculator.base.basefragment.BaseViewModelFragment
-import com.hola360.crushlovecalculator.data.model.diary.DiaryModel
-import com.hola360.crushlovecalculator.data.utils.DataResponse
-import com.hola360.crushlovecalculator.data.utils.LoadDataStatus
-import com.hola360.crushlovecalculator.databinding.FragmentSearchDiaryBinding
-import com.hola360.crushlovecalculator.ui.lovediary.search.adapter.ResultDiaryAdapter
-import com.hola360.crushlovecalculator.utils.ToastUtils
-import com.hola360.crushlovecalculator.utils.clickWithDebounce
+import com.example.app_my_diary.R
+import com.example.app_my_diary.base.BaseViewModelFragment
+import com.example.app_my_diary.databinding.FragmentSearchDiaryBinding
+import com.example.app_my_diary.diary.search.adapter.ResultDiaryAdapter
+import com.example.app_my_diary.model.DiaryModel
+import com.example.app_my_diary.utils.DataResponse
+import com.example.app_my_diary.utils.LoadDataStatus
+import com.example.app_my_diary.utils.ToastUtils
+import com.example.app_my_diary.utils.clickWithDebounce
 
 class SearchDiaryFragment : BaseViewModelFragment<FragmentSearchDiaryBinding>(),
     ResultDiaryAdapter.OnItemClickListener {

@@ -1,14 +1,13 @@
-package com.hola360.crushlovecalculator.ui.lovediary.diarydetaildialog
+package com.example.app_my_diary.diary.diarydetaildialog
 
 import android.app.Application
 import androidx.lifecycle.*
-import com.hola360.crushlovecalculator.R
-import com.hola360.crushlovecalculator.data.model.diary.DiaryModel
-import com.hola360.crushlovecalculator.data.repository.DiaryRepository
-import com.hola360.crushlovecalculator.data.utils.DataResponse
-import com.hola360.crushlovecalculator.data.utils.LoadDataStatus
-import com.hola360.crushlovecalculator.ui.lovediary.LoveDiaryFragmentViewModel
-import com.hola360.crushlovecalculator.utils.RootPath
+import com.example.app_my_diary.R
+import com.example.app_my_diary.model.DiaryModel
+import com.example.app_my_diary.repository.DiaryRepository
+import com.example.app_my_diary.utils.DataResponse
+import com.example.app_my_diary.utils.LoadDataStatus
+import com.example.app_my_diary.utils.RootPath
 import kotlinx.coroutines.launch
 
 class DiaryDetailViewModel(private var app: Application) : ViewModel() {

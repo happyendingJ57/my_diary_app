@@ -2,6 +2,8 @@ package com.example.app_my_diary.app
 
 import android.app.Application
 import android.graphics.Point
+import com.example.app_my_diary.utils.Constants
+import com.example.app_my_diary.utils.SystemUtils
 
 class App : Application() {
     lateinit var outPoint: Point

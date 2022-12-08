@@ -6,8 +6,8 @@ import com.example.app_my_diary.model.PhotoModel
 import com.example.app_my_diary.model.PickPhotoModel
 import com.example.app_my_diary.model.PickPhotoType
 import com.example.app_my_diary.repository.MediaStoreRepository
-import com.hola360.crushlovecalculator.data.utils.DataResponse
-import com.hola360.crushlovecalculator.data.utils.LoadDataStatus
+import com.example.app_my_diary.utils.DataResponse
+import com.example.app_my_diary.utils.LoadDataStatus
 import kotlinx.coroutines.launch
 
 class PickPhotoViewModel(val app: App) : ViewModel() {

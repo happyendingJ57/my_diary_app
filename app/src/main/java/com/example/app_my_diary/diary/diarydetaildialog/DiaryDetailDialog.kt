@@ -14,12 +14,7 @@ import com.example.app_my_diary.dialog.MessageAlertDialog
 import com.example.app_my_diary.diary.eventdiarylovedialog.AddDiaryLoveDialog
 import com.example.app_my_diary.model.DiaryModel
 import com.example.app_my_diary.model.PhotoModel
-import com.example.app_my_diary.utils.Constants
-import com.example.app_my_diary.utils.Utils
-import com.example.app_my_diary.utils.setSafeMenuClickListener
-import com.hola360.crushlovecalculator.data.utils.DataResponse
-import com.hola360.crushlovecalculator.data.utils.LoadDataStatus
-import com.hola360.crushlovecalculator.ui.lovediary.diarydetaildialog.DiaryDetailViewModel
+import com.example.app_my_diary.utils.*
 
 class DiaryDetailDialog : BaseViewModelDialogFragment<LayoutDiaryDetailDialogBinding>(),
     ImageAdapter.OnPickPhotoItemClickListener, AddDiaryLoveDialog.OnDoneClickListener,
@@ -29,7 +24,6 @@ class DiaryDetailDialog : BaseViewModelDialogFragment<LayoutDiaryDetailDialogBin
     var status: Int? = null
     var titleDialog: String? = null
     var diaryModel: DiaryModel? = null
-    private lateinit var app: App
 
     private var checkNext = false
     private var checkPrevious = false
@@ -39,7 +33,6 @@ class DiaryDetailDialog : BaseViewModelDialogFragment<LayoutDiaryDetailDialogBin
     private lateinit var viewModel: DiaryDetailViewModel
     var onDeleteDiary: OnDeleteDiary? = null
     override fun initView() {
-        app = requireActivity().application as App
         initLayoutManager()
         binding!!.apply {
             toolbar!!.apply {
@@ -53,7 +46,7 @@ class DiaryDetailDialog : BaseViewModelDialogFragment<LayoutDiaryDetailDialogBin
                         R.id.action_edit -> {
                             val dialog = AddDiaryLoveDialog.createEdit(
                                 "Edit Diary Love",
-                                app.storyImageColumns,
+                              2,
                                 diaryModel!!
                             )
                             dialog.listener = this@DiaryDetailDialog

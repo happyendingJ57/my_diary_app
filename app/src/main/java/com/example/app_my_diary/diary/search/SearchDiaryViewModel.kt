@@ -1,12 +1,12 @@
-package com.hola360.crushlovecalculator.ui.lovediary.search
+package com.example.app_my_diary.diary.search
 
 import android.app.Application
 import androidx.lifecycle.*
-import com.hola360.crushlovecalculator.R
-import com.hola360.crushlovecalculator.data.model.diary.DiaryModel
-import com.hola360.crushlovecalculator.data.repository.DiaryRepository
-import com.hola360.crushlovecalculator.data.utils.DataResponse
-import com.hola360.crushlovecalculator.data.utils.LoadDataStatus
+import com.example.app_my_diary.R
+import com.example.app_my_diary.model.DiaryModel
+import com.example.app_my_diary.repository.DiaryRepository
+import com.example.app_my_diary.utils.DataResponse
+import com.example.app_my_diary.utils.LoadDataStatus
 import kotlinx.coroutines.launch
 import java.text.SimpleDateFormat
 import java.util.*

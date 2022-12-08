@@ -69,30 +69,12 @@ dependencies {
     implementation 'com.squareup.retrofit2:converter-gson:2.9.0'
     implementation 'com.squareup.okhttp3:okhttp:5.0.0-alpha.7'
 
-    // CameraX core library using the camera2 implementation
-//    def camerax_version = "1.0.2"
-//    // The following line is optional, as the core library is included indirectly by camera-camera2
-//    implementation("androidx.camera:camera-core:$camerax_version")
-//    implementation("androidx.camera:camera-camera2:$camerax_version")
-//    // If you want to additionally use the CameraX Lifecycle library
-//    implementation("androidx.camera:camera-lifecycle:$camerax_version")
-//    // If you want to additionally use the CameraX View class
-//    implementation('androidx.camera:camera-view:1.1.0-rc01')
-
-    //CameraX
-    implementation("androidx.camera:camera-core:1.1.0-beta03")
-    implementation("androidx.camera:camera-camera2:1.1.0-beta03")
-    implementation("androidx.camera:camera-lifecycle:1.1.0-beta03")
-    implementation("androidx.camera:camera-extensions:1.1.0-beta03")
-    implementation("androidx.camera:camera-view:1.1.0-beta03")
-
     //glide + image
     implementation 'com.github.bumptech.glide:glide:4.13.2'
     annotationProcessor 'com.github.bumptech.glide:compiler:4.13.2'
     implementation 'com.google.code.gson:gson:2.9.0'
     implementation 'com.makeramen:roundedimageview:2.3.0'
 
-    implementation 'com.github.CanHub:Android-Image-Cropper:4.2.1'
     implementation 'net.yslibrary.keyboardvisibilityevent:keyboardvisibilityevent:3.0.0-RC3'
 
     implementation 'com.caverock:androidsvg-aar:1.4'
@@ -107,17 +89,6 @@ dependencies {
     annotationProcessor room_annotation
     implementation room_lib
 
-    //section recyclerview
-    implementation section_recyclerview_lib
-
-    //stroke textview
-    implementation 'com.github.iamBedant:OutlineTextView:1.0.5'
-
-    //custom progress bar
-    implementation 'com.github.ybq:Android-SpinKit:1.4.0'
-
-    //zoomable imagevie
-    implementation 'com.github.chrisbanes:PhotoView:2.3.0'
 //Carouselrecylerview
     implementation 'com.github.sparrow007:carouselrecyclerview:1.2.5'
 }

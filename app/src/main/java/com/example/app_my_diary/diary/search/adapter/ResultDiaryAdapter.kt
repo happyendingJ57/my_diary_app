@@ -1,16 +1,15 @@
-package com.hola360.crushlovecalculator.ui.lovediary.search.adapter
+package com.example.app_my_diary.diary.search.adapter
 
 import android.annotation.SuppressLint
 import android.util.Log
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
+import com.example.app_my_diary.base.BaseViewHolder
+import com.example.app_my_diary.databinding.ItemSearchDiaryBinding
+import com.example.app_my_diary.databinding.ItemSearchDiaryDateBinding
 import com.example.app_my_diary.model.DiaryModel
-import com.hola360.crushlovecalculator.base.baseviewholder.BaseViewHolder
-import com.hola360.crushlovecalculator.data.model.diary.DiaryModel
-import com.hola360.crushlovecalculator.databinding.ItemSearchDiaryBinding
-import com.hola360.crushlovecalculator.databinding.ItemSearchDiaryDateBinding
-import com.hola360.crushlovecalculator.utils.clickWithDebounce
+import com.example.app_my_diary.utils.clickWithDebounce
 
 @SuppressLint("NotifyDataSetChanged")
 class ResultDiaryAdapter : RecyclerView.Adapter<BaseViewHolder>() {

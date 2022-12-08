@@ -52,8 +52,4 @@ ext {
     room_annotation = [
             "androidx.room:room-compiler:$room_version"
     ]
-
-    section_recyclerview_lib = [
-            "com.github.luizgrp:SectionedRecyclerViewAdapter:v$section_recyclerview"
-    ]
 }

@@ -1,4 +1,4 @@
-package com.hola360.crushlovecalculator.ui.lovediary
+package com.example.app_my_diary.diary
 
 import android.os.Bundle
 import android.view.View
@@ -12,17 +12,16 @@ import com.example.app_my_diary.EventActionModel
 import com.example.app_my_diary.ListActionPopup
 import com.example.app_my_diary.R
 import com.example.app_my_diary.app.App
+import com.example.app_my_diary.base.BaseViewModelFragment
 import com.example.app_my_diary.databinding.FragmentLoveDiaryBinding
 import com.example.app_my_diary.dialog.MessageAlertDialog
-import com.example.app_my_diary.diary.LoveDiaryAdapter
 import com.example.app_my_diary.diary.diarydetaildialog.DiaryDetailDialog
 import com.example.app_my_diary.diary.eventdiarylovedialog.AddDiaryLoveDialog
 import com.example.app_my_diary.model.DiaryModel
+import com.example.app_my_diary.utils.DataResponse
+import com.example.app_my_diary.utils.LoadDataStatus
 import com.example.app_my_diary.utils.setSafeMenuClickListener
 import com.example.app_my_diary.utils.snackbar.SnackBarType
-import com.hola360.crushlovecalculator.base.basefragment.BaseViewModelFragment
-import com.hola360.crushlovecalculator.data.utils.DataResponse
-import com.hola360.crushlovecalculator.data.utils.LoadDataStatus
 
 class LoveDiaryFragment : BaseViewModelFragment<FragmentLoveDiaryBinding>(), View.OnClickListener,
     DiaryDetailDialog.OnDeleteDiary,
@@ -30,15 +29,13 @@ class LoveDiaryFragment : BaseViewModelFragment<FragmentLoveDiaryBinding>(), Vie
     LoveDiaryAdapter.OnItemClickListener {
     private lateinit var viewModel: LoveDiaryFragmentViewModel
     private lateinit var mLayoutManager: GridLayoutManager
-    private lateinit var app: App
     private var mAdapter: LoveDiaryAdapter? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        app = requireActivity().application as App
         mAdapter = LoveDiaryAdapter(mainActivity.application)
         mAdapter!!.apply {
-            setMaxColumns(app.storyImageColumns)
+            setMaxColumns(2)
             setListener(this@LoveDiaryFragment)
 //            imageStoryListener = this@LoveDiaryFragment
         }
@@ -66,10 +63,6 @@ class LoveDiaryFragment : BaseViewModelFragment<FragmentLoveDiaryBinding>(), Vie
             }
             toolbar.setSafeMenuClickListener {
                 when (it!!.itemId) {
-                    R.id.action_calendar -> {
-                        findNavController().navigate(R.id.action_global_calendarFragment)
-                    }
-
                     R.id.action_search -> {
                         findNavController().navigate(R.id.action_global_searchDiaryFragment)
                     }
@@ -80,7 +73,7 @@ class LoveDiaryFragment : BaseViewModelFragment<FragmentLoveDiaryBinding>(), Vie
     }
 
     private fun initLayoutManager() {
-        mLayoutManager = GridLayoutManager(requireContext(), app.storyImageColumns)
+        mLayoutManager = GridLayoutManager(requireContext(), 2)
     }
 
     override fun getLayout(): Int {
@@ -90,7 +83,7 @@ class LoveDiaryFragment : BaseViewModelFragment<FragmentLoveDiaryBinding>(), Vie
     override fun onClick(p0: View?) {
         when (p0!!.id) {
             R.id.add_diary_love -> {
-                val dialog = AddDiaryLoveDialog.create("Add Diary love", app.storyImageColumns)
+                val dialog = AddDiaryLoveDialog.create("Add Diary love", 2)
                 dialog.listener = this@LoveDiaryFragment
                 dialog.show(parentFragmentManager, "diaryDialog")
             }
@@ -151,7 +144,7 @@ class LoveDiaryFragment : BaseViewModelFragment<FragmentLoveDiaryBinding>(), Vie
                     0 -> {
                         val dialog = AddDiaryLoveDialog.createEdit(
                             "Edit Diary love",
-                            app.storyImageColumns,
+                            2,
                             diaryModel
                         )
                         dialog.listener = this@LoveDiaryFragment

@@ -1,4 +1,4 @@
-package com.hola360.crushlovecalculator.base.basefragment
+package com.example.app_my_diary.base
 
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.databinding.ViewDataBinding

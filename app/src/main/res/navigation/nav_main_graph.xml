@@ -8,21 +8,18 @@
         android:id="@+id/nav_home"
         android:name="com.example.app_my_diary.home.HomeFragment"
         tools:layout="@layout/fragment_home" />
-    <fragment
-        android:id="@+id/calendarFragment"
-        android:name="com.hola360.crushlovecalculator.ui.lovediary.calendar.CalendarFragment"
-        android:label="Calendar" />
 
-    <action
-        android:id="@+id/action_global_calendarFragment"
-        app:destination="@id/calendarFragment" />
     <fragment
         android:id="@+id/searchDiaryFragment"
-        android:name="com.hola360.crushlovecalculator.ui.lovediary.search.SearchDiaryFragment"
+        android:name="com.example.app_my_diary.diary.search.SearchDiaryFragment"
         android:label="Search Diary" />
 
     <action
         android:id="@+id/action_global_searchDiaryFragment"
         app:destination="@id/searchDiaryFragment" />
+    <fragment
+        android:id="@+id/nav_love_diary"
+        android:name="com.example.app_my_diary.diary.LoveDiaryFragment"
+        android:label="LoveDiaryFragment" />
 
 </navigation>

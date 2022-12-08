@@ -23,7 +23,7 @@
             android:layout_weight="0"
             android:contentDescription= "@string/app_name"
             android:padding="@dimen/dp_4"
-            android:iconForAction="@{actionModel}" />
+            android:iconForActions="@{actionModel}" />
 
         <TextView
             android:fontFamily="@font/quicksand_medium"

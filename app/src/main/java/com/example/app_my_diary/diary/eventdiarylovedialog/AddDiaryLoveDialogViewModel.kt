@@ -6,15 +6,12 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.viewModelScope
-import com.hola360.crushlovecalculator.R
-import com.hola360.crushlovecalculator.data.model.PhotoModel
-import com.hola360.crushlovecalculator.data.model.diary.DiaryModel
-import com.hola360.crushlovecalculator.data.model.story.StoryModel
-import com.hola360.crushlovecalculator.data.repository.DiaryRepository
-import com.hola360.crushlovecalculator.data.repository.StoryRepository
-import com.hola360.crushlovecalculator.ui.event.dialog.StoryDialogViewModel
-import com.hola360.crushlovecalculator.utils.RootPath
-import com.hola360.crushlovecalculator.utils.Utils
+import com.example.app_my_diary.R
+import com.example.app_my_diary.model.DiaryModel
+import com.example.app_my_diary.model.PhotoModel
+import com.example.app_my_diary.repository.DiaryRepository
+import com.example.app_my_diary.utils.RootPath
+import com.example.app_my_diary.utils.Utils
 import kotlinx.coroutines.launch
 import java.io.*
 
@@ -23,7 +20,7 @@ class AddDiaryLoveDialogViewModel(private val app: Application) : ViewModel() {
     val isSaved = MutableLiveData<Boolean>().apply { postValue(false) }
     val isLoading = MutableLiveData<Boolean>().apply { postValue(false) }
 
-    fun addDiary(description: String, imageList: MutableList<PhotoModel>,title: String,weatherIcon: String) {
+    fun addDiary(description: String, imageList: MutableList<PhotoModel>, title: String, weatherIcon: String) {
         val diaryModel = DiaryModel()
         val currentTime = System.currentTimeMillis()
         viewModelScope.launch {

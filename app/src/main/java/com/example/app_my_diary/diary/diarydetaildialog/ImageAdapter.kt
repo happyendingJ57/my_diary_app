@@ -8,7 +8,9 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.app_my_diary.base.BaseViewHolder
+import com.example.app_my_diary.databinding.ItemReadDiaryLoveBinding
 import com.example.app_my_diary.model.PhotoModel
+import com.example.app_my_diary.utils.clickWithDebounce
 
 
 class ImageAdapter() : RecyclerView.Adapter<BaseViewHolder>(){

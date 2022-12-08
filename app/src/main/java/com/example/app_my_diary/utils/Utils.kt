@@ -10,10 +10,10 @@ import android.util.TypedValue
 import androidx.core.content.ContextCompat
 import androidx.core.graphics.drawable.toBitmap
 import androidx.fragment.app.DialogFragment
+import com.example.app_my_diary.R
+import com.example.app_my_diary.model.PhotoModel
 import com.google.gson.GsonBuilder
 import com.google.gson.reflect.TypeToken
-import com.hola360.crushlovecalculator.R
-import com.hola360.crushlovecalculator.data.model.PhotoModel
 import java.io.*
 import java.lang.reflect.Type
 import java.math.BigDecimal
@@ -75,47 +75,6 @@ object Utils {
             postScale(scale, scale)
         }
         return Bitmap.createBitmap(bitmap, 0, 0, bitmap.width, bitmap.height, maxtrix, false)
-    }
-
-    fun cropHeartBorderImage(context: Context, sourceBitmap: Bitmap): Bitmap? {
-        val drawable: Drawable? =
-            ContextCompat.getDrawable(context, R.drawable.ic_lovetest_photo_default)
-        val defaultPhoto = drawable?.toBitmap(
-            drawable.intrinsicWidth.coerceAtLeast(1),
-            drawable.intrinsicHeight.coerceAtLeast(1),
-            null
-        )
-        return if (defaultPhoto != null) {
-            val scaleX = defaultPhoto.width / sourceBitmap.width.toFloat()
-            val scaleY = defaultPhoto.height / sourceBitmap.height.toFloat()
-            val matrix = Matrix().apply {
-                postScale(scaleX, scaleY)
-            }
-            val newBitmap = Bitmap.createBitmap(
-                sourceBitmap,
-                0,
-                0,
-                sourceBitmap.width,
-                sourceBitmap.height,
-                matrix,
-                false
-            )
-            val paint = Paint().apply {
-                isAntiAlias = true
-                xfermode = PorterDuffXfermode(PorterDuff.Mode.SRC_IN)
-            }
-            val bitmap = Bitmap.createBitmap(
-                defaultPhoto.width,
-                defaultPhoto.height,
-                Bitmap.Config.ARGB_8888
-            )
-            val canvas = Canvas(bitmap)
-            canvas.drawBitmap(defaultPhoto, 0f, 0f, null)
-            canvas.drawBitmap(newBitmap, 0f, 0f, paint)
-            bitmap
-        } else {
-            null
-        }
     }
 
 
