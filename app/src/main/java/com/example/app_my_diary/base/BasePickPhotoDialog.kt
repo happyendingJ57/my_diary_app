@@ -6,7 +6,6 @@ import android.view.View
 import android.widget.LinearLayout
 import androidx.databinding.ViewDataBinding
 import androidx.recyclerview.widget.GridLayoutManager
-import com.example.app_my_diary.R
 import com.example.app_my_diary.app.App
 import com.example.app_my_diary.viewmodel.PickPhotoViewModel
 
