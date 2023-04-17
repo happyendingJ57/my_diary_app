@@ -1,4 +1,4 @@
-package com.hola360.crushlovecalculator.ui.lovediary.model
+package com.example.app_my_diary.diary.calendar.model
 
 data class Date(
     var date: Int = 0,

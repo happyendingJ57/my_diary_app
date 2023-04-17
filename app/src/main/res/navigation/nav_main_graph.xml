@@ -21,5 +21,12 @@
         android:id="@+id/nav_love_diary"
         android:name="com.example.app_my_diary.diary.LoveDiaryFragment"
         android:label="LoveDiaryFragment" />
+    <fragment
+        android:id="@+id/calendarFragment"
+        android:name="com.example.app_my_diary.diary.calendar.CalendarFragment"
+        android:label="CalendarFragment" />
 
+    <action
+        android:id="@+id/action_global_calendarFragment"
+        app:destination="@id/calendarFragment" />
 </navigation>

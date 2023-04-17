@@ -1,17 +1,20 @@
 package com.example.app_my_diary.utils
 
 import android.annotation.SuppressLint
+import android.graphics.Color
 import android.os.SystemClock
 import android.view.MenuItem
 import android.view.View
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.appcompat.widget.Toolbar
+import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.core.content.ContextCompat
 import androidx.databinding.BindingAdapter
 import com.bumptech.glide.Glide
 import com.example.app_my_diary.EventActionModel
 import com.example.app_my_diary.R
+import com.example.app_my_diary.diary.calendar.model.Date
 import com.example.app_my_diary.model.ActionModel
 import com.example.app_my_diary.model.PhotoModel
 import com.google.android.material.imageview.ShapeableImageView
@@ -33,6 +36,52 @@ fun View.clickWithDebounce(debounceTime: Long = 600L, action: () -> Unit) {
         }
     })
 }
+@BindingAdapter("android:setupDateText")
+fun TextView.setupDateText(date: Date) {
+    setTextColor(
+        if (date.isSelected) {
+            Color.WHITE
+        } else {
+            if (date.isNowDate) {
+                Color.parseColor("#8295DB")
+            } else {
+                if(date.isSelfMonthDate){
+                    Color.parseColor("#222B45")
+                } else {
+                    Color.parseColor("#8F9BB3")
+                }
+            }
+        }
+    )
+
+    text = "${date.date}"
+}
+
+@BindingAdapter("android:setupDateView")
+fun View.setupDateView(date: Date) {
+    visibility = if (date.hasDiary) {
+        setBackgroundResource(if (date.isSelected) R.drawable.bg_date_dot_selected else R.drawable.bg_date_dot_normal)
+        View.VISIBLE
+    } else {
+        View.INVISIBLE
+    }
+}
+
+@BindingAdapter("android:setupDateBackground")
+fun ConstraintLayout.setupBackground(date: Date) {
+    setBackgroundResource(
+        if (date.isSelected) {
+            R.drawable.bg_date_selected
+        } else {
+            if (date.isNowDate) {
+                R.drawable.bg_date_current_date
+            } else {
+                R.drawable.bg_date_normal
+            }
+        }
+    )
+}
+
 @BindingAdapter("android:bindDiaryPhoto")
 fun ShapeableImageView.bindDiaryPhoto(imageModel: PhotoModel?) {
     if (imageModel != null && !imageModel.isNormalItem) {

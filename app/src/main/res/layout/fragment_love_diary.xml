@@ -30,7 +30,6 @@
             app:titleTextAppearance="?textAppearanceHeadline6"
             app:titleTextColor="@color/md_white_1000" />
 
-
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent">

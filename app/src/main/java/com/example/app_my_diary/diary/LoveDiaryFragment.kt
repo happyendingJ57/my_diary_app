@@ -2,7 +2,6 @@ package com.example.app_my_diary.diary
 
 import android.os.Bundle
 import android.view.View
-import android.widget.Toast
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.GridLayoutManager
@@ -11,7 +10,6 @@ import com.example.app_my_diary.ActionAdapter
 import com.example.app_my_diary.EventActionModel
 import com.example.app_my_diary.ListActionPopup
 import com.example.app_my_diary.R
-import com.example.app_my_diary.app.App
 import com.example.app_my_diary.base.BaseViewModelFragment
 import com.example.app_my_diary.databinding.FragmentLoveDiaryBinding
 import com.example.app_my_diary.dialog.MessageAlertDialog
@@ -63,6 +61,9 @@ class LoveDiaryFragment : BaseViewModelFragment<FragmentLoveDiaryBinding>(), Vie
             }
             toolbar.setSafeMenuClickListener {
                 when (it!!.itemId) {
+                    R.id.action_calendar -> {
+                        findNavController().navigate(R.id.action_global_calendarFragment)
+                    }
                     R.id.action_search -> {
                         findNavController().navigate(R.id.action_global_searchDiaryFragment)
                     }
