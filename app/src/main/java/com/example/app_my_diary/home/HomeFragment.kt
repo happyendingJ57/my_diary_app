@@ -1,20 +1,17 @@
 package com.example.app_my_diary.home
 
-import android.widget.Toast
 import androidx.navigation.fragment.findNavController
 import com.example.app_my_diary.R
 import com.example.app_my_diary.base.BasePermissionFragment
-import com.example.app_my_diary.base.BaseViewModelFragment
 import com.example.app_my_diary.databinding.FragmentHomeBinding
 import com.example.app_my_diary.utils.SystemUtils
 
-class HomeFragment : BasePermissionFragment<FragmentHomeBinding>(){
+class HomeFragment : BasePermissionFragment<FragmentHomeBinding>() {
     override fun initView() {
-        binding?.startDiary?.setOnClickListener{
+        binding?.startDiary?.setOnClickListener {
 
             if (!SystemUtils.hasPermissions(
-                    requireContext(),
-                    *SystemUtils.getStoragePermissions()
+                    requireContext(), *SystemUtils.getStoragePermissions()
                 )
             ) {
                 storageResultLauncher.launch(SystemUtils.getStoragePermissions())
@@ -26,7 +23,7 @@ class HomeFragment : BasePermissionFragment<FragmentHomeBinding>(){
     }
 
     override fun getLayout(): Int {
-       return R.layout.fragment_home
+        return R.layout.fragment_home
     }
 
     override fun initViewModel() {

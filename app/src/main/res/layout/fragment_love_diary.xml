@@ -26,7 +26,7 @@
             app:menu="@menu/menu_diary_love"
             app:navigationIcon="@drawable/ic_toolbar_back"
             app:popupTheme="@style/Theme.App.PopupOverlay"
-            app:title="Diary Love"
+            app:title="@string/string_my_diary"
             app:titleTextAppearance="?textAppearanceHeadline6"
             app:titleTextColor="@color/md_white_1000" />
 
