@@ -18,6 +18,7 @@ import com.example.app_my_diary.diary.calendar.adapter.ViewPagerCalendarAdapter
 import com.example.app_my_diary.diary.calendar.model.Date
 import com.example.app_my_diary.diary.calendar.utils.GenerateCalendarStatus
 import com.example.app_my_diary.diary.calendar.utils.GeneratedCalendar
+import com.example.app_my_diary.diary.diarydetaildialog.DiaryDetailDialog
 import com.example.app_my_diary.model.DiaryModel
 import com.example.app_my_diary.utils.*
 import java.util.*
@@ -25,7 +26,7 @@ import java.util.*
 @RequiresApi(Build.VERSION_CODES.N)
 class CalendarFragment : BaseViewModelFragment<FragmentCalendarBinding>(),
     CalendarAdapter.OnItemClickListener, DatePickerDiaLog.OnDatePickerListener,
-    DiaryAdapter.OnDiaryClickListener {
+    DiaryAdapter.OnDiaryClickListener, DiaryDetailDialog.OnDeleteDiary {
 
     private lateinit var mViewModel: CalendarViewModel
     private val mDiaryAdapter = DiaryAdapter()
@@ -88,6 +89,7 @@ class CalendarFragment : BaseViewModelFragment<FragmentCalendarBinding>(),
             tvPickDate.text = setDate(currentDate)
 
             tvToday.clickWithDebounce {
+                mCalendar.timeInMillis = System.currentTimeMillis()
                 mViewModel.generateData(
                     mCalendar.get(Calendar.YEAR), mCalendar.get(Calendar.MONTH) + 1, mCalendar
                 )
@@ -108,7 +110,7 @@ class CalendarFragment : BaseViewModelFragment<FragmentCalendarBinding>(),
         }
     }
 
-    fun setDate(date: Long): String {
+    private fun setDate(date: Long): String {
         currentDate = date
         return SystemUtils.getDiaryDate(date)
     }
@@ -121,7 +123,6 @@ class CalendarFragment : BaseViewModelFragment<FragmentCalendarBinding>(),
         val factory = CalendarViewModel.Factory(mainActivity.application)
         mViewModel = ViewModelProvider(this, factory)[CalendarViewModel::class.java]
         vpAdapter = ViewPagerCalendarAdapter(mainActivity)
-        mCalendar.timeInMillis = System.currentTimeMillis()
 
         mViewModel.mDiaryList.observe(this) {
             it?.let {
@@ -130,9 +131,11 @@ class CalendarFragment : BaseViewModelFragment<FragmentCalendarBinding>(),
                         val data = (it as DataResponse.DataSuccessResponse).body
                         mDiaryAdapter.updateData(data)
                     }
+
                     LoadDataStatus.ERROR -> {
                         mDiaryAdapter.clearData()
                     }
+
                     else -> {}
                 }
             }
@@ -147,16 +150,19 @@ class CalendarFragment : BaseViewModelFragment<FragmentCalendarBinding>(),
                         vpAdapter.updateData(data)
                         fetchDiary(time = currentDate)
                     }
+
                     GenerateCalendarStatus.Next -> {
                         val data = (it as GeneratedCalendar.NextData).body
                         vpAdapter.addNextMonth(data)
                         numberOfMonth += data.size
                     }
+
                     GenerateCalendarStatus.Previous -> {
                         val data = (it as GeneratedCalendar.PreviousData).body
                         vpAdapter.addPreviousMonth(data)
                         numberOfMonth += data.size
                     }
+
                     GenerateCalendarStatus.NoData -> {}
                 }
             }
@@ -210,6 +216,20 @@ class CalendarFragment : BaseViewModelFragment<FragmentCalendarBinding>(),
     }
 
     override fun onDiaryClickListener(diaryModel: DiaryModel) {
-        Log.d("TAG", "onDiaryClickListener: 11111")
+        val dialog =
+            DiaryDetailDialog.create(diaryModel.diaryId, getString(R.string.string_read_diary), 0)
+        dialog.onDeleteDiary = this
+        if (!dialog.isAdded) {
+            dialog.show(parentFragmentManager, "detailDiary")
+        }
+    }
+
+    override fun onDeleteDiary() {
+        mViewModel.fetchDiary(currentDate)
+        mCalendar.timeInMillis = currentDate
+        mViewModel.generateData(
+            mCalendar.get(Calendar.YEAR), mCalendar.get(Calendar.MONTH) + 1, mCalendar
+        )
+        binding!!.vpCalendar.setCurrentItem(Constants.CALENDAR_MIDDLE_MONTH_POSITION, false)
     }
 }
