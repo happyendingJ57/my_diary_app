@@ -80,7 +80,7 @@
                     android:fontFamily="@font/quicksand_medium"
                     android:text="Start writting about your day"
                     android:textAppearance="@style/TextAppearance.AppCompat.Body2"
-                    android:textColor="@color/colorAccent" />
+                    android:textColor="@color/color_app" />
 
                 <ImageView
                     android:id="@+id/line_right"

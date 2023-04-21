@@ -669,4 +669,5 @@
     <color name="md_blue_grey_500_75">#c0607d8b</color>
 
     <color name="dialog_overlay_color">#80000000</color>
+    <color name="color_app">#03A9F4</color>
 </resources>
