@@ -9,7 +9,6 @@ import com.example.app_my_diary.utils.SystemUtils
 class HomeFragment : BasePermissionFragment<FragmentHomeBinding>() {
     override fun initView() {
         binding?.startDiary?.setOnClickListener {
-
             if (!SystemUtils.hasPermissions(
                     requireContext(), *SystemUtils.getStoragePermissions()
                 )
@@ -18,7 +17,9 @@ class HomeFragment : BasePermissionFragment<FragmentHomeBinding>() {
             } else {
                 findNavController().navigate(R.id.nav_love_diary)
             }
-
+        }
+        binding?.textViewSetting?.setOnClickListener {
+            findNavController().navigate(R.id.settingFragment)
         }
     }
 

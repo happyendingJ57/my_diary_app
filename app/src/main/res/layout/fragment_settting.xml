@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Setting"
+            android:textColor="@color/black"
+            android:textSize="@dimen/dp_40" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dp_20"
+            android:background="@color/color_app"
+            android:padding="@dimen/dp_10"
+            android:text="Language"
+            android:textColor="@color/black"
+            android:textSize="@dimen/dp_16" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dp_10"
+            android:background="@color/color_app"
+            android:padding="@dimen/dp_10"
+            android:text="change password"
+            android:textColor="@color/black"
+            android:textSize="@dimen/dp_16" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dp_10"
+            android:background="@color/color_app"
+            android:padding="@dimen/dp_10"
+            android:text="Logout"
+            android:textColor="@color/black"
+            android:textSize="@dimen/dp_16" />
+    </LinearLayout>
+</layout>

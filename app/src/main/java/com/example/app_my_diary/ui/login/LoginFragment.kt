@@ -14,6 +14,9 @@ class LoginFragment : BaseViewModelFragment<FragmentLoginBinding>() {
         binding?.textViewSignup?.setOnClickListener {
             findNavController().navigate(R.id.signUpFragment)
         }
+        binding?.textViewLogin?.setOnClickListener {
+            findNavController().navigate(R.id.homeFragment)
+        }
     }
 
     override fun getLayout(): Int = R.layout.fragment_login
