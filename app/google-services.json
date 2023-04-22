@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "66118134578",
+    "project_id": "diaryapp-b2ac9",
+    "storage_bucket": "diaryapp-b2ac9.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:66118134578:android:9d04e80f422018de61052b",
+        "android_client_info": {
+          "package_name": "com.example.app_my_diary"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "66118134578-uu8u1b7jk3b61439cj6q795jc1fqg901.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.app_my_diary",
+            "certificate_hash": "c1463c54aae9021e41b994eb1c5a5a414a9c5e9e"
+          }
+        },
+        {
+          "client_id": "66118134578-5c2sf2puppthoel9gdfab4p6bi30kbck.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBGQZtTP5NbDDY6LiY42AaCw5xeD8uWwAQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "66118134578-5c2sf2puppthoel9gdfab4p6bi30kbck.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

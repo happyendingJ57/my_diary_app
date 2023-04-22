@@ -33,6 +33,7 @@
                 android:textSize="@dimen/sp_18" />
 
             <EditText
+                android:id="@+id/et_email"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="Tài khoản đăng nhập"
@@ -56,6 +57,7 @@
                 android:textSize="@dimen/sp_18" />
 
             <EditText
+                android:id="@+id/et_password"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="Mật khẩu"
