@@ -1,10 +1,14 @@
 package com.example.app_my_diary.ui.login
 
+import android.util.Log
 import androidx.navigation.fragment.findNavController
 import com.example.app_my_diary.R
 import com.example.app_my_diary.base.BaseViewModelFragment
 import com.example.app_my_diary.databinding.FragmentLoginBinding
+import com.example.app_my_diary.utils.snackbar.SnackBarType
 import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.auth.ktx.auth
+import com.google.firebase.ktx.Firebase
 
 class LoginFragment : BaseViewModelFragment<FragmentLoginBinding>() {
     override fun initViewModel() {
@@ -12,11 +16,14 @@ class LoginFragment : BaseViewModelFragment<FragmentLoginBinding>() {
     }
 
     override fun initView() {
-        binding?.textViewSignup?.setOnClickListener {
+        binding?.textViewSignUpNow?.setOnClickListener {
             findNavController().navigate(R.id.signUpFragment)
         }
         binding?.textViewLogin?.setOnClickListener {
             login()
+        }
+        binding?.textViewForgotPassword?.setOnClickListener {
+            resetPassword()
         }
     }
 
@@ -27,22 +34,49 @@ class LoginFragment : BaseViewModelFragment<FragmentLoginBinding>() {
         val auth = FirebaseAuth.getInstance()
         val email = binding?.etEmail?.text.toString().trim()
         val password = binding?.etPassword?.text.toString().trim()
-        auth.signInWithEmailAndPassword(email, password)
-            .addOnCompleteListener(requireActivity()) { task ->
-                if (task.isSuccessful) {
-                    // Sign in success, update UI with the signed-in user's information
-//                    Log.d(TAG, "signInWithEmail:success")
-//                    val user = auth.currentUser
-//                    updateUI(user)
-                    findNavController().navigate(R.id.homeFragment)
-                } else {
-                    // If sign in fails, display a message to the user.
-//                    Log.w(TAG, "signInWithEmail:failure", task.exception)
-//                    Toast.makeText(
-//                        baseContext, "Authentication failed.", Toast.LENGTH_SHORT
-//                    ).show()
-//                    updateUI(null)
+
+        if (email.isBlank() || password.isEmpty()) {
+            mainActivity.showSnackBar(
+                SnackBarType.Warning,
+                resources.getString(R.string.title_warning),
+                "Email or password is empty"
+            )
+        } else {
+            auth.signInWithEmailAndPassword(email, password)
+                .addOnCompleteListener(requireActivity()) { task ->
+                    if (task.isSuccessful) {
+                        findNavController().navigate(R.id.homeFragment)
+                    } else {
+                        mainActivity.showSnackBar(
+                            SnackBarType.Warning,
+                            resources.getString(R.string.title_warning),
+                            "Login failed"
+                        )
+                    }
                 }
+        }
+    }
+
+    private fun resetPassword() {
+        val auth = FirebaseAuth.getInstance()
+        val emailAddress = binding?.etEmail?.text.toString().trim()
+        if (emailAddress.isBlank()){
+            mainActivity.showSnackBar(
+                SnackBarType.Warning,
+                resources.getString(R.string.title_warning),
+                "Please enter your email"
+            )
+            return
+        }
+        auth.sendPasswordResetEmail(emailAddress).addOnCompleteListener { task ->
+            if (task.isSuccessful) {
+                Log.d("TAG", "resetPassword: 1111111")
+                mainActivity.showSnackBar(
+                    SnackBarType.Success,
+                    resources.getString(R.string.title_success),
+                    "Please check your email to reset your password"
+                )
             }
+        }
     }
 }

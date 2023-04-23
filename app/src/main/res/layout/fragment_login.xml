@@ -37,6 +37,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="Tài khoản đăng nhập"
+                android:inputType="textEmailAddress"
                 android:maxLines="1"
                 android:paddingHorizontal="@dimen/dp_10"
                 android:singleLine="true"
@@ -61,37 +62,60 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="Mật khẩu"
+                android:inputType="textPassword"
                 android:maxLines="1"
                 android:singleLine="true"
                 android:textColor="@color/black" />
         </LinearLayout>
 
         <TextView
+            android:id="@+id/text_view_forgot_password"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dp_10"
+            android:layout_marginEnd="@dimen/dp_20"
+            android:text="@string/string_login_forgot_password"
+            android:textColor="@color/black"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/linear_layout_password" />
+
+        <TextView
             android:id="@+id/text_view_login"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/dp_20"
-            android:background="@color/color_app"
-            android:padding="@dimen/dp_10"
+            android:background="@drawable/background_round_color_app"
+            android:paddingHorizontal="@dimen/dp_20"
+            android:paddingVertical="@dimen/dp_10"
             android:text="@string/string_login_login"
             android:textSize="22sp"
             android:textStyle="bold"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/linear_layout_password" />
+            app:layout_constraintTop_toBottomOf="@id/text_view_forgot_password" />
 
-        <TextView
-            android:id="@+id/text_view_signup"
+        <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/dp_20"
-            android:background="@color/color_app"
-            android:padding="@dimen/dp_10"
-            android:text="@string/string_login_sign_up"
-            android:textSize="22sp"
-            android:textStyle="bold"
+            android:layout_marginEnd="@dimen/dp_20"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/text_view_login" />
+            app:layout_constraintTop_toBottomOf="@id/text_view_login">
+
+            <TextView
+                android:id="@+id/text_view_no_account"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dp_20"
+                android:text="@string/string_login_no_account" />
+
+            <TextView
+                android:id="@+id/text_view_sign_up_now"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/dp_5"
+                android:layout_marginTop="@dimen/dp_20"
+                android:text="@string/string_login_sign_up_now"
+                android:textColor="@color/colorHome" />
+        </LinearLayout>
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

@@ -22,6 +22,7 @@
             android:id="@+id/linear_layout_gmail"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:orientation="vertical"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintTop_toTopOf="parent">
 
@@ -47,6 +48,7 @@
             android:id="@+id/linear_layout_password"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:orientation="vertical"
             app:layout_constraintTop_toBottomOf="@+id/linear_layout_gmail">
 
             <TextView
@@ -70,6 +72,7 @@
             android:id="@+id/linear_layout_re_password"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:orientation="vertical"
             app:layout_constraintTop_toBottomOf="@+id/linear_layout_password">
 
             <TextView
