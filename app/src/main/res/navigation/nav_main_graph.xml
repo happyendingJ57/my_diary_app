@@ -51,5 +51,13 @@
     <fragment
         android:id="@+id/settingFragment"
         android:name="com.example.app_my_diary.ui.setting.SettingFragment"
-        android:label="SettingFragment" />
+        android:label="SettingFragment" >
+        <action
+            android:id="@+id/action_settingFragment_to_changePasswordFragment"
+            app:destination="@id/changePasswordFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/changePasswordFragment"
+        android:name="com.example.app_my_diary.ui.change_password.ChangePasswordFragment"
+        android:label="ChangePasswordFragment" />
 </navigation>

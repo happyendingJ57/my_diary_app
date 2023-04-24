@@ -14,6 +14,7 @@
             android:textSize="@dimen/dp_40" />
 
         <TextView
+            android:id="@+id/text_view_change_language"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/dp_20"
@@ -24,6 +25,7 @@
             android:textSize="@dimen/dp_16" />
 
         <TextView
+            android:id="@+id/text_view_change_password"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/dp_10"
@@ -34,6 +36,7 @@
             android:textSize="@dimen/dp_16" />
 
         <TextView
+            android:id="@+id/text_view_logout"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/dp_10"
