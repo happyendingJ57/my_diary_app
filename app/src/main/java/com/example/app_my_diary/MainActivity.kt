@@ -13,6 +13,7 @@ import com.example.app_my_diary.utils.snackbar.CustomSnackBar
 import com.example.app_my_diary.utils.snackbar.SnackBarType
 
 class MainActivity : AppCompatActivity() {
+
     private var binding: ActivityMainBinding? = null
     private var navController: NavController? = null
     private var navHostFragment: Fragment? = null
