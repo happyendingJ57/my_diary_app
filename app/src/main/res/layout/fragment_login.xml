@@ -2,71 +2,56 @@
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
-    <androidx.constraintlayout.widget.ConstraintLayout
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
-
+        android:layout_height="match_parent"
+        android:orientation="vertical">
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="@dimen/dp_40"
-            android:text="@string/string_my_diary"
-            android:textColor="@color/color_app"
-            android:textSize="24sp"
-            app:layout_constraintBottom_toTopOf="@id/linear_layout_gmail"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent" />
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="@dimen/dp_50"
+            android:text="Hello Again!"
+            android:textColor="@color/black"
+            android:textSize="@dimen/dp_20"
+            android:textStyle="bold" />
 
-        <LinearLayout
-            android:id="@+id/linear_layout_gmail"
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="@dimen/dp_10"
+            android:gravity="center_horizontal"
+            android:text="Wellcome back you've \n been missed!"
+            android:textSize="@dimen/dp_20"
+            android:textStyle="bold" />
+
+
+        <EditText
+            android:layout_marginTop="@dimen/dp_40"
+            android:id="@+id/et_email"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintTop_toTopOf="parent">
+            android:hint="Tài khoản đăng nhập"
+            android:inputType="textEmailAddress"
+            android:maxLines="1"
+            android:paddingHorizontal="@dimen/dp_10"
+            android:singleLine="true"
+            android:textColor="@color/black"
+            android:background="@drawable/background_et_login"/>
 
-            <TextView
-                android:layout_width="@dimen/dp_100"
-                android:layout_height="wrap_content"
-                android:text="@string/string_login_gmail"
-                android:textColor="@color/black"
-                android:textSize="@dimen/sp_18" />
 
-            <EditText
-                android:id="@+id/et_email"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:hint="Tài khoản đăng nhập"
-                android:inputType="textEmailAddress"
-                android:maxLines="1"
-                android:paddingHorizontal="@dimen/dp_10"
-                android:singleLine="true"
-                android:textColor="@color/black" />
-        </LinearLayout>
-
-        <LinearLayout
-            android:id="@+id/linear_layout_password"
+        <EditText
+            android:layout_marginTop="@dimen/dp_10"
+            android:id="@+id/et_password"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            app:layout_constraintTop_toBottomOf="@+id/linear_layout_gmail">
-
-            <TextView
-                android:layout_width="@dimen/dp_100"
-                android:layout_height="wrap_content"
-                android:text="@string/string_login_password"
-                android:textColor="@color/black"
-                android:textSize="@dimen/sp_18" />
-
-            <EditText
-                android:id="@+id/et_password"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:hint="Mật khẩu"
-                android:inputType="textPassword"
-                android:maxLines="1"
-                android:singleLine="true"
-                android:textColor="@color/black" />
-        </LinearLayout>
+            android:hint="Mật khẩu"
+            android:inputType="textPassword"
+            android:maxLines="1"
+            android:singleLine="true"
+            android:textColor="@color/black" />
 
         <TextView
             android:id="@+id/text_view_forgot_password"
@@ -117,5 +102,5 @@
                 android:text="@string/string_login_sign_up_now"
                 android:textColor="@color/colorHome" />
         </LinearLayout>
-    </androidx.constraintlayout.widget.ConstraintLayout>
+    </LinearLayout>
 </layout>
