@@ -7,7 +7,7 @@
     <color name="teal_700">#FF018786</color>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
-    <color name="colorAccent">#FF708B</color>
+    <color name="colorAccent">@color/color_app</color>
     <color name="colorPrimary">#FF708B</color>
     <color name="colorLightAccent">#137C88</color>
     <color name="colorBackground">@color/md_white_1000</color>
@@ -670,4 +670,5 @@
 
     <color name="dialog_overlay_color">#80000000</color>
     <color name="color_app">#03A9F4</color>
+    <color name="grey_login">#D1EBFF</color>
 </resources>

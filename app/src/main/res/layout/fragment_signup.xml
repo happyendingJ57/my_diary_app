@@ -1,117 +1,96 @@
 <?xml version="1.0" encoding="utf-8"?>
-<layout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto">
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
 
-    <androidx.constraintlayout.widget.ConstraintLayout
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
-
+        android:layout_height="match_parent"
+        android:orientation="vertical">
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="@dimen/dp_80"
             android:layout_marginBottom="@dimen/dp_40"
             android:text="Đăng kí tài khoản"
-            android:textSize="@dimen/dp_24"
-            android:textStyle="bold"
-            app:layout_constraintBottom_toTopOf="@id/linear_layout_gmail"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent" />
+            android:textColor="@color/color_app"
+            android:textSize="24sp"
+            android:textStyle="bold" />
 
-        <LinearLayout
-            android:id="@+id/linear_layout_gmail"
+        <EditText
+            android:id="@+id/et_email"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintTop_toTopOf="parent">
+            android:layout_marginHorizontal="@dimen/dp_20"
+            android:autofillHints="emailAddress"
+            android:drawableStart="@drawable/icon_email"
+            android:drawablePadding="@dimen/dp_5"
+            android:hint="Email"
+            android:paddingVertical="@dimen/dp_10"
+            android:background="@drawable/background_et_login"
+            android:inputType="textEmailAddress"
+            android:maxLines="1"
+            android:paddingHorizontal="@dimen/dp_10"
+            android:singleLine="true"
+            android:textColor="@color/black" />
 
-            <TextView
-                android:layout_width="@dimen/dp_100"
-                android:layout_height="wrap_content"
-                android:text="@string/string_login_gmail"
-                android:textColor="@color/black"
-                android:textSize="@dimen/sp_18" />
-
-            <EditText
-                android:id="@+id/et_email"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:hint="Tài khoản đăng nhập"
-                android:maxLines="1"
-                android:paddingHorizontal="@dimen/dp_10"
-                android:singleLine="true"
-                android:textColor="@color/black" />
-        </LinearLayout>
-
-        <LinearLayout
-            android:id="@+id/linear_layout_password"
+        <EditText
+            android:id="@+id/et_password"
             android:layout_width="match_parent"
+            android:layout_marginTop="@dimen/dp_10"
             android:layout_height="wrap_content"
-            android:orientation="vertical"
-            app:layout_constraintTop_toBottomOf="@+id/linear_layout_gmail">
+            android:layout_marginHorizontal="@dimen/dp_20"
+            android:autofillHints="password"
+            android:drawableStart="@drawable/icon_password"
+            android:drawablePadding="@dimen/dp_5"
+            android:hint="Mật khẩu"
+            android:paddingVertical="@dimen/dp_10"
+            android:background="@drawable/background_et_login"
+            android:inputType="textPassword"
+            android:maxLines="1"
+            android:paddingHorizontal="@dimen/dp_10"
+            android:singleLine="true"
+            android:textColor="@color/black" />
 
-            <TextView
-                android:layout_width="@dimen/dp_100"
-                android:layout_height="wrap_content"
-                android:text="@string/string_login_password"
-                android:textColor="@color/black"
-                android:textSize="@dimen/sp_18" />
 
-            <EditText
-                android:id="@+id/et_password"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:hint="Mật khẩu"
-                android:maxLines="1"
-                android:singleLine="true"
-                android:textColor="@color/black" />
-        </LinearLayout>
-
-        <LinearLayout
-            android:id="@+id/linear_layout_re_password"
+        <EditText
             android:layout_width="match_parent"
+            android:layout_marginTop="@dimen/dp_10"
             android:layout_height="wrap_content"
-            android:orientation="vertical"
-            app:layout_constraintTop_toBottomOf="@+id/linear_layout_password">
-
-            <TextView
-                android:layout_width="@dimen/dp_100"
-                android:layout_height="wrap_content"
-                android:text="@string/string_login_password"
-                android:textColor="@color/black"
-                android:textSize="@dimen/sp_18" />
-
-            <EditText
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:hint="Nhập lại mật khẩu"
-                android:maxLines="1"
-                android:singleLine="true"
-                android:textColor="@color/black" />
-        </LinearLayout>
+            android:layout_marginHorizontal="@dimen/dp_20"
+            android:autofillHints="password"
+            android:drawableStart="@drawable/icon_password"
+            android:drawablePadding="@dimen/dp_5"
+            android:paddingVertical="@dimen/dp_10"
+            android:background="@drawable/background_et_login"
+            android:hint="Nhập lại mật khẩu"
+            android:inputType="textPassword"
+            android:maxLines="1"
+            android:paddingHorizontal="@dimen/dp_10"
+            android:singleLine="true"
+            android:textColor="@color/black" />
 
         <TextView
             android:id="@+id/text_view_signup"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginHorizontal="@dimen/dp_20"
             android:layout_marginTop="@dimen/dp_20"
-            android:background="@color/color_app"
+            android:background="@drawable/background_round_color_app"
+            android:gravity="center"
             android:padding="@dimen/dp_10"
             android:text="Đăng kí"
-            android:textSize="@dimen/dp_24"
-            android:textStyle="bold"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/linear_layout_re_password" />
+            android:textColor="@color/white"
+            android:textSize="24sp"
+            android:textStyle="bold" />
 
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_gravity="end"
             android:layout_marginTop="@dimen/dp_40"
-            android:layout_marginEnd="@dimen/dp_20"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/text_view_signup">
+            android:layout_marginEnd="@dimen/dp_20">
 
             <TextView
                 android:layout_width="wrap_content"
@@ -123,9 +102,9 @@
                 android:id="@+id/text_view_login"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="đăng nhập"
+                android:text="Đăng nhập"
                 android:textColor="@color/color_app" />
         </LinearLayout>
-    </androidx.constraintlayout.widget.ConstraintLayout>
+    </LinearLayout>
 
 </layout>
