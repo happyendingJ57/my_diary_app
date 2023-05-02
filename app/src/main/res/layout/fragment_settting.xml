@@ -36,7 +36,7 @@
             android:background="@color/color_grey" />
 
         <TextView
-            android:id="@+id/text_view_change_language"
+            android:id="@+id/text_view_change_second_password"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/dp_5"

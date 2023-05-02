@@ -7,8 +7,6 @@ import com.example.app_my_diary.base.BaseViewModelFragment
 import com.example.app_my_diary.databinding.FragmentLoginBinding
 import com.example.app_my_diary.utils.snackbar.SnackBarType
 import com.google.firebase.auth.FirebaseAuth
-import com.google.firebase.auth.ktx.auth
-import com.google.firebase.ktx.Firebase
 
 class LoginFragment : BaseViewModelFragment<FragmentLoginBinding>() {
     override fun initViewModel() {
@@ -45,7 +43,7 @@ class LoginFragment : BaseViewModelFragment<FragmentLoginBinding>() {
             auth.signInWithEmailAndPassword(email, password)
                 .addOnCompleteListener(requireActivity()) { task ->
                     if (task.isSuccessful) {
-                        findNavController().navigate(R.id.homeFragment)
+                        findNavController().navigate(R.id.secondPasswordFragment)
                     } else {
                         mainActivity.showSnackBar(
                             SnackBarType.Warning,
@@ -60,7 +58,7 @@ class LoginFragment : BaseViewModelFragment<FragmentLoginBinding>() {
     private fun resetPassword() {
         val auth = FirebaseAuth.getInstance()
         val emailAddress = binding?.etEmail?.text.toString().trim()
-        if (emailAddress.isBlank()){
+        if (emailAddress.isBlank()) {
             mainActivity.showSnackBar(
                 SnackBarType.Warning,
                 resources.getString(R.string.title_warning),

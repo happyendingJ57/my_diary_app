@@ -64,4 +64,12 @@
         android:id="@+id/splashFragment"
         android:name="com.example.app_my_diary.ui.Splash.SplashFragment"
         android:label="SplashFragment" />
+    <fragment
+        android:id="@+id/secondPasswordFragment"
+        android:name="com.example.app_my_diary.ui.second_password.SecondPasswordFragment"
+        android:label="SecondPasswordFragment" />
+    <fragment
+        android:id="@+id/changeSecondPassword"
+        android:name="com.example.app_my_diary.ui.second_password.ChangeSecondPassword"
+        android:label="ChangeSecondPassword" />
 </navigation>
