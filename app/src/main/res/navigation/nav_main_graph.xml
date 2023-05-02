@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/nav_main_graph"
-    app:startDestination="@+id/loginFragment">
+    app:startDestination="@+id/splashFragment">
     <fragment
         android:id="@+id/homeFragment"
         android:name="com.example.app_my_diary.home.HomeFragment"
@@ -60,4 +60,8 @@
         android:id="@+id/changePasswordFragment"
         android:name="com.example.app_my_diary.ui.change_password.ChangePasswordFragment"
         android:label="ChangePasswordFragment" />
+    <fragment
+        android:id="@+id/splashFragment"
+        android:name="com.example.app_my_diary.ui.Splash.SplashFragment"
+        android:label="SplashFragment" />
 </navigation>
