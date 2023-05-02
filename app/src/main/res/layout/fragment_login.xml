@@ -9,44 +9,24 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_gravity="center_horizontal"
-            android:layout_marginTop="@dimen/dp_50"
-            android:text="Xin chào"
-            android:textColor="@color/black"
-            android:textSize="24sp"
-            android:textStyle="bold" />
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center_horizontal"
-            android:gravity="center_horizontal"
-            android:text="Ngày hôm nay của bạn thế nào ?"
-            android:textSize="20sp"
-            android:textStyle="bold" />
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="@dimen/dp_20"
-            android:layout_marginTop="@dimen/dp_50"
+            android:layout_gravity="center"
+            android:layout_marginTop="@dimen/dp_80"
             android:text="Đăng nhập"
             android:textColor="@color/color_app"
             android:textSize="32sp"
             android:textStyle="bold" />
-
 
         <EditText
             android:id="@+id/et_email"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginHorizontal="@dimen/dp_20"
-            android:layout_marginTop="@dimen/dp_10"
+            android:layout_marginTop="@dimen/dp_50"
+            android:autofillHints="emailAddress"
             android:background="@drawable/background_et_login"
             android:drawableStart="@drawable/icon_email"
             android:drawablePadding="@dimen/dp_5"
             android:hint="Email"
-            android:autofillHints="emailAddress"
             android:inputType="textEmailAddress"
             android:maxLines="1"
             android:paddingHorizontal="@dimen/dp_10"
@@ -61,6 +41,7 @@
             android:layout_height="wrap_content"
             android:layout_marginHorizontal="@dimen/dp_20"
             android:layout_marginTop="@dimen/dp_10"
+            android:autofillHints="password"
             android:background="@drawable/background_et_login"
             android:drawableStart="@drawable/icon_password"
             android:drawablePadding="@dimen/dp_5"
@@ -70,7 +51,6 @@
             android:paddingHorizontal="@dimen/dp_10"
             android:paddingVertical="@dimen/dp_10"
             android:singleLine="true"
-            android:autofillHints="password"
             android:textColor="@color/black" />
 
         <TextView

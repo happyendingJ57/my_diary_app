@@ -1,48 +1,79 @@
 <?xml version="1.0" encoding="utf-8"?>
-<layout xmlns:android="http://schemas.android.com/apk/res/android">
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical">
 
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar"
+            style="@style/CustomToolBar"
+            android:theme="@style/Theme.App.AppBarOverlay"
+            app:contentInsetStartWithNavigation="@dimen/dp_4"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:navigationIcon="@drawable/ic_toolbar_back"
+            app:popupTheme="@style/Theme.App.PopupOverlay"
+            app:title="Cài đặt"
+            app:titleTextAppearance="?textAppearanceHeadline6"
+            app:titleTextColor="@color/md_white_1000" />
+
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Setting"
+            android:layout_marginTop="@dimen/dp_5"
+            android:padding="@dimen/dp_10"
+            android:text="Trang cá nhân"
             android:textColor="@color/black"
-            android:textSize="@dimen/dp_40" />
+            android:textSize="16sp" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp_1"
+            android:layout_marginVertical="@dimen/dp_5"
+            android:background="@color/color_grey" />
 
         <TextView
             android:id="@+id/text_view_change_language"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/dp_20"
-            android:background="@color/color_app"
+            android:layout_marginTop="@dimen/dp_5"
             android:padding="@dimen/dp_10"
-            android:text="Language"
+            android:text="Đổi mã bảo vệ"
             android:textColor="@color/black"
-            android:textSize="@dimen/dp_16" />
+            android:textSize="16sp" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp_1"
+            android:layout_marginVertical="@dimen/dp_5"
+            android:background="@color/color_grey" />
 
         <TextView
             android:id="@+id/text_view_change_password"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/dp_10"
-            android:background="@color/color_app"
             android:padding="@dimen/dp_10"
-            android:text="change password"
+            android:text="Đổi mật khẩu"
             android:textColor="@color/black"
             android:textSize="@dimen/dp_16" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp_1"
+            android:layout_marginVertical="@dimen/dp_5"
+            android:background="@color/color_grey" />
 
         <TextView
             android:id="@+id/text_view_logout"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/dp_10"
-            android:background="@color/color_app"
             android:padding="@dimen/dp_10"
-            android:text="Logout"
+            android:text="Đăng xuất"
             android:textColor="@color/black"
             android:textSize="@dimen/dp_16" />
     </LinearLayout>
