@@ -21,11 +21,12 @@
             app:titleTextColor="@color/md_white_1000" />
 
         <TextView
+            android:id="@+id/tvThongTinCaNhan"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/dp_5"
             android:padding="@dimen/dp_10"
-            android:text="Trang cá nhân"
+            android:text="Thôn tin cá nhân"
             android:textColor="@color/black"
             android:textSize="16sp" />
 

@@ -16,6 +16,9 @@ class SettingFragment : BaseViewModelFragment<FragmentSetttingBinding>() {
         binding?.textViewChangeSecondPassword?.setOnClickListener {
             findNavController().navigate(R.id.changeSecondPassword)
         }
+        binding?.tvThongTinCaNhan?.setOnClickListener {
+            findNavController().navigate(R.id.profileFragment)
+        }
     }
 
     override fun getLayout(): Int = R.layout.fragment_settting
