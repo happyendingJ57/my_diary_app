@@ -127,4 +127,10 @@
     <string name="string_login_sign_up_now">Đăng kí ngay</string>
     <string name="string_login_forgot_password">Forgot password ?</string>
 
+    <string-array name="change_background_action">
+        <item>@string/profile_avatar_dialog_camera</item>
+        <item>@string/profile_avatar_dialog_gallery</item>
+        <item>@string/action_store</item>
+    </string-array>
+
 </resources>

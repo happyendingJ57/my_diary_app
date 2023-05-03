@@ -12,7 +12,7 @@ class SplashFragment : BaseViewModelFragment<FragmentSplashBinding>() {
 
     override fun initView() {
         binding?.tvTitle?.postDelayed({
-            findNavController().navigate(R.id.loginFragment)
+            findNavController().navigate(R.id.secondPasswordFragment)
         }, 1000)
     }
 

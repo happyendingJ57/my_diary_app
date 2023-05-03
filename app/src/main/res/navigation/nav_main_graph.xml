@@ -76,4 +76,63 @@
         android:id="@+id/profileFragment"
         android:name="com.example.app_my_diary.ui.profile.ProfileFragment"
         android:label="ProfileFragment" />
+    <fragment
+        android:id="@+id/eventDetailFragment"
+        android:name="com.example.app_my_diary.ui.event.eventdetail.EventDetailFragment"
+        android:label="Detail Fragment"
+        tools:layout="@layout/fragment_event_detail">
+
+        <argument
+            android:name="eventModel"
+            app:argType="com.example.app_my_diary.ui.event.EventModel"
+            app:nullable="true" />
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/storyDetailFragment"
+        android:name="com.example.app_my_diary.ui.event.storydetail.StoryDetailFragment"
+        android:label="StoryDetailFragment"
+        tools:layout="@layout/fragment_story_detail">
+        <argument
+            android:name="storyModel"
+            app:argType="com.example.app_my_diary.ui.event.StoryModel"
+            app:nullable="true" />
+
+        <argument
+            android:name="eventModel"
+            app:argType="com.example.app_my_diary.ui.event.EventModel"
+            app:nullable="true" />
+    </fragment>
+
+    <action
+        android:id="@+id/action_global_storyDetailFragment"
+        app:destination="@id/storyDetailFragment">
+        <argument
+            android:name="storyModel"
+            app:argType="com.example.app_my_diary.ui.event.StoryModel"
+            app:nullable="true" />
+
+        <argument
+            android:name="eventModel"
+            app:argType="com.example.app_my_diary.ui.event.EventModel"
+            app:nullable="true" />
+    </action>
+
+    <fragment
+        android:id="@+id/eventFragment"
+        android:name="com.example.app_my_diary.ui.event.EventFragment"
+        android:label="EventFragment">
+        <action
+            android:id="@+id/action_eventFragment_to_eventDetailFragment"
+            app:destination="@id/eventDetailFragment">
+            <argument
+                android:name="eventModel"
+                app:argType="com.example.app_my_diary.ui.event.EventModel"
+                app:nullable="true" />
+        </action>
+    </fragment>
+    <action
+        android:id="@+id/action_global_eventFragment"
+        app:destination="@id/eventFragment" />
 </navigation>

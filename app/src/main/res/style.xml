@@ -16,6 +16,10 @@
         <item name="android:layout_marginBottom">@dimen/dp_5</item>
     </style>
 
+    <style name="SpinKitView.Large.Circle">
+        <item name="SpinKit_Style">Circle</item>
+    </style>
+
     <style name="textDay_BottomSheetEvent">
         <item name="android:textColor">#9F9898</item>
         <item name="android:textAppearance">@style/TextAppearance.MyTheme.Headline9</item>

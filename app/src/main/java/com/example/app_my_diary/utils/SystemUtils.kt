@@ -32,6 +32,7 @@ import androidx.exifinterface.media.ExifInterface
 import com.example.app_my_diary.R
 import com.example.app_my_diary.app.App
 import com.example.app_my_diary.model.LovePhotoModel
+import com.example.app_my_diary.ui.event.EventModel
 import com.google.android.material.snackbar.Snackbar
 import java.io.ByteArrayInputStream
 import java.io.File
@@ -131,6 +132,20 @@ object SystemUtils {
         return sdfDate.format(date)
     }
 
+    fun getMyEventTime(eventModel: EventModel): String {
+        val sdfDate = SimpleDateFormat(EVENT_TIME, Locale.US)
+        val currentDate = Date(System.currentTimeMillis())
+        var eventDate = Date(eventModel.date)
+
+        if (sdfDate.format(currentDate) == sdfDate.format(eventDate)) {
+            return sdfDate.format(currentDate)
+        } else {
+            if (eventModel.calType == 3) {
+                eventDate = calAnnually(currentDate, eventDate)
+            }
+        }
+        return sdfDate.format(eventDate.time)
+    }
 
     fun calAnnuallyType(date: Long): Long {
         val currentTime = System.currentTimeMillis()

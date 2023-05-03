@@ -1,6 +1,7 @@
 package com.example.app_my_diary.home
 
 import androidx.navigation.fragment.findNavController
+import com.example.app_my_diary.NavMainGraphDirections
 import com.example.app_my_diary.R
 import com.example.app_my_diary.base.BasePermissionFragment
 import com.example.app_my_diary.databinding.FragmentHomeBinding
@@ -19,7 +20,9 @@ class HomeFragment : BasePermissionFragment<FragmentHomeBinding>() {
             }
         }
         binding?.textViewSetting?.setOnClickListener {
-            findNavController().navigate(R.id.settingFragment)
+//            findNavController().navigate(R.id.settingFragment)
+//            findNavController().navigate(R.id.eventFragment)
+            findNavController().navigate(NavMainGraphDirections.actionGlobalEventFragment())
         }
     }
 

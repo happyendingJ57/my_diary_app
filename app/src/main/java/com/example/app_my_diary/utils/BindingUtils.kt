@@ -12,11 +12,12 @@ import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.core.content.ContextCompat
 import androidx.databinding.BindingAdapter
 import com.bumptech.glide.Glide
-import com.example.app_my_diary.EventActionModel
 import com.example.app_my_diary.R
 import com.example.app_my_diary.diary.calendar.model.Date
 import com.example.app_my_diary.model.ActionModel
+import com.example.app_my_diary.model.EventActionModel
 import com.example.app_my_diary.model.PhotoModel
+import com.example.app_my_diary.ui.event.EventModel
 import com.google.android.material.imageview.ShapeableImageView
 
 fun Toolbar.setSafeMenuClickListener(onSafeClick: (MenuItem?) -> Unit) {
@@ -35,6 +36,102 @@ fun View.clickWithDebounce(debounceTime: Long = 600L, action: () -> Unit) {
             lastClickTime = SystemClock.elapsedRealtime()
         }
     })
+}
+@SuppressLint("SetTextI18n")
+@BindingAdapter("android:setMyEventCount")
+fun TextView.setMyEventCount(eventModel: EventModel) {
+    when (eventModel.calType) {
+        1 -> {
+            text = if (eventModel.date < System.currentTimeMillis()) {
+                resources.getString(R.string.action_done)
+            } else {
+                val daysLeft = SystemUtils.calMyEventDayLeft(eventModel.date) + 1
+                if (daysLeft / 365L == 0L) {
+                    "$daysLeft Days Left"
+                } else {
+                    if (daysLeft % 365 == 0L) {
+                        "${daysLeft / 365} Years Left"
+                    } else {
+                        "${daysLeft / 365} Years ${(daysLeft % 365)} Days Left"
+                    }
+                }
+            }
+        }
+        2 -> {
+            val daysAgo = SystemUtils.calMyEventDayLeft(eventModel.date)
+            text = if (daysAgo / 365L == 0L) {
+                "$daysAgo Days Ago"
+            } else {
+                if (daysAgo % 365 == 0L) {
+                    "${daysAgo / 365} Years Ago"
+                } else {
+                    "${daysAgo / 365} Years ${(daysAgo % 365)} Days Ago"
+                }
+            }
+        }
+        3 -> {
+            val cal = SystemUtils.calAnnuallyType(eventModel.date)
+            text = if (cal == -1L) {
+                "Today"
+            } else {
+                "${cal + 1} Days Left"
+            }
+        }
+    }
+}
+
+@BindingAdapter("android:noResultSrc")
+fun ImageView.noResultSrc(isCommon: Boolean) {
+    if (isCommon) {
+        setImageResource(R.drawable.ic_img_no_internet)
+    } else {
+        setImageResource(R.drawable.ic_empty_my_event)
+    }
+}
+@BindingAdapter("android:setMyEventDate")
+fun TextView.setMyEventDate(eventModel: EventModel) {
+    text = SystemUtils.getMyEventTime(eventModel)
+}
+@BindingAdapter("android:bindEventThumb")
+fun ShapeableImageView.bindEventThumb(thumbPath: String) {
+    if (thumbPath.isNotEmpty()) {
+        Glide.with(this).load(thumbPath)
+            .placeholder(R.drawable.ic_default_image)
+            .error(R.drawable.ic_default_image).into(this)
+    } else {
+        setImageResource(R.drawable.banner_default)
+    }
+}
+
+@BindingAdapter("android:setDetailStoryTime")
+fun TextView.setDetailStoryTime(time: Long) {
+    text = SystemUtils.getStoryDetailTime(time)
+}
+
+@BindingAdapter("android:bindEventCover")
+fun ImageView.bindEventCover(thumbPath: String) {
+    if (thumbPath.isNotEmpty()) {
+        Glide.with(this)
+            .load(thumbPath)
+            .placeholder(R.drawable.ic_loading_event2)
+            .error(R.drawable.ic_loading_event2)
+            .into(this)
+    } else {
+        setImageResource(R.drawable.banner_default)
+    }
+}
+@BindingAdapter("android:setEventTime")
+fun TextView.setEventTime(time: Long) {
+    text = SystemUtils.getEventTime(time)
+}
+@BindingAdapter("android:setDayOfWeekstEventTime")
+fun TextView.setDayOfWeekstEventTime(time: Long) {
+    text = SystemUtils.getDayOfWeeksEventTime(time)
+}
+
+@BindingAdapter("android:setMonthEventTime")
+fun TextView.setMonthEventTime(time: Long) {
+    text = SystemUtils.getMonthEventTime(time)
 }
 @BindingAdapter("android:setupDateText")
 fun TextView.setupDateText(date: Date) {

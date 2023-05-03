@@ -5,6 +5,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.BaseAdapter
 import com.example.app_my_diary.databinding.ItemActionPopupBinding
+import com.example.app_my_diary.model.EventActionModel
 
 class ActionAdapter(
     private val actions: MutableList<EventActionModel>,

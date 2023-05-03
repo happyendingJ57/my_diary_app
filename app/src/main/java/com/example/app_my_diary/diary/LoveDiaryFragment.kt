@@ -7,7 +7,6 @@ import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.app_my_diary.ActionAdapter
-import com.example.app_my_diary.EventActionModel
 import com.example.app_my_diary.ListActionPopup
 import com.example.app_my_diary.R
 import com.example.app_my_diary.base.BaseViewModelFragment
@@ -16,6 +15,7 @@ import com.example.app_my_diary.dialog.MessageAlertDialog
 import com.example.app_my_diary.diary.diarydetaildialog.DiaryDetailDialog
 import com.example.app_my_diary.diary.eventdiarylovedialog.AddDiaryLoveDialog
 import com.example.app_my_diary.model.DiaryModel
+import com.example.app_my_diary.model.EventActionModel
 import com.example.app_my_diary.utils.DataResponse
 import com.example.app_my_diary.utils.LoadDataStatus
 import com.example.app_my_diary.utils.setSafeMenuClickListener

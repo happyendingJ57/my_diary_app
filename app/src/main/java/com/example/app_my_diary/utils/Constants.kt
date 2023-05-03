@@ -1,8 +1,8 @@
 package com.example.app_my_diary.utils
 
 import android.Manifest
-import com.example.app_my_diary.EventActionModel
 import com.example.app_my_diary.R
+import com.example.app_my_diary.model.EventActionModel
 
 object Constants {
     val STORAGE_PERMISSION_UNDER_STORAGE_SCOPE = arrayOf(

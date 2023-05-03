@@ -15,10 +15,11 @@ abstract class BasePickPhotoDialog<V : ViewDataBinding?> : BaseFullAlertDialog<V
 
     lateinit var mViewModel: PickPhotoViewModel
     lateinit var mLayoutManager: GridLayoutManager
-
+    lateinit var app: App
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setStyle(STYLE_NORMAL, R.style.Theme_App_Dialog_FullScreen)
+        app = requireActivity().application as App
         initViewModel()
     }
 
