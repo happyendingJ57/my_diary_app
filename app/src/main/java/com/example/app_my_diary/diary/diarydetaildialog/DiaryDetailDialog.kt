@@ -45,7 +45,7 @@ class DiaryDetailDialog : BaseViewModelDialogFragment<LayoutDiaryDetailDialogBin
                         }
                         R.id.action_edit -> {
                             val dialog = AddDiaryLoveDialog.createEdit(
-                                "Edit Diary Love",
+                                "Chỉnh sửa nhật kí",
                               2,
                                 diaryModel!!
                             )

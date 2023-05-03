@@ -103,7 +103,7 @@ class PickPhotoStoryDialog : BasePickPhotoDialog<DialogPickPhotoStoryBinding>(),
                 resources.getString(R.string.action_done)
             } else {
                 isEnabled = true
-                "Done(${count})"
+                "Hoàn thành(${count})"
             }
         }
     }
@@ -203,7 +203,7 @@ class PickPhotoStoryDialog : BasePickPhotoDialog<DialogPickPhotoStoryBinding>(),
         toastUtils.showToast(
             BottomToastUtils.MessageType.Warning,
             getString(R.string.title_warning),
-            "You can only select up to $max photos"
+            "Bạn có thể chọn tối đa $max ảnh"
         )
     }
 

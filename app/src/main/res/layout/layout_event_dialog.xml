@@ -54,7 +54,7 @@
                     android:layout_marginTop="@dimen/dp_16"
                     android:layout_marginBottom="5dp"
                     android:fontFamily="@font/quicksand_bold"
-                    android:text="Edit event"
+                    android:text="Chỉnh sửa sự  kiện"
                     android:textAppearance="@style/TextAppearance.AppCompat.Body2" />
 
             </LinearLayout>

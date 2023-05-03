@@ -5,7 +5,8 @@ import com.example.app_my_diary.R
 import com.example.app_my_diary.base.BaseBottomSheetDialog
 import com.example.app_my_diary.databinding.DialogDatePickerBinding
 import com.example.app_my_diary.utils.ToastUtils
-import java.util.*
+import java.util.Calendar
+import java.util.GregorianCalendar
 
 class DatePickerDiaLog : BaseBottomSheetDialog<DialogDatePickerBinding>() {
     private val todayCalendar = Calendar.getInstance()
@@ -37,18 +38,7 @@ class DatePickerDiaLog : BaseBottomSheetDialog<DialogDatePickerBinding>() {
                     onDatePickerListener?.onDatePicked(calendar!!.time.time)
                     dismiss()
                 } else {
-                    if (isDiary) {
-                        ToastUtils.getInstance(mainActivity)
-                            .showToast("Cannot pick day in the future")
-                    } else {
-                        ToastUtils.getInstance(requireActivity()).showToast(
-                            if (isBirthDay) {
-                                getString(R.string.profile_invalid_age_toast)
-                            } else {
-                                getString(R.string.invalid_starting_love_date)
-                            }
-                        )
-                    }
+                    ToastUtils.getInstance(mainActivity).showToast("Không thể chọn ngày trong tương lai")
                 }
             }
         }

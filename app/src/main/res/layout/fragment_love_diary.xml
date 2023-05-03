@@ -78,7 +78,7 @@
                     android:layout_gravity="center_horizontal"
                     android:layout_marginTop="@dimen/dp_20"
                     android:fontFamily="@font/quicksand_medium"
-                    android:text="Start writting about your day"
+                    android:text="Bắt đầu viết về ngày của bạn"
                     android:textAppearance="@style/TextAppearance.AppCompat.Body2"
                     android:textColor="@color/color_app" />
 

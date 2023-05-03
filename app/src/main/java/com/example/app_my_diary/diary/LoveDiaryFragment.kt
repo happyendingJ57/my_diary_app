@@ -44,8 +44,8 @@ class LoveDiaryFragment : BaseViewModelFragment<FragmentLoveDiaryBinding>(), Vie
     }
 
     val actions = mutableListOf(
-        EventActionModel(R.drawable.ic_action_edit, "Edit Diary"),
-        EventActionModel(R.drawable.ic_action_delete, "Delete Diary")
+        EventActionModel(R.drawable.ic_action_edit, "Chỉnh sửa nhật ký"),
+        EventActionModel(R.drawable.ic_action_delete, "Xóa nhật ký")
     )
 
     override fun initView() {
@@ -84,7 +84,7 @@ class LoveDiaryFragment : BaseViewModelFragment<FragmentLoveDiaryBinding>(), Vie
     override fun onClick(p0: View?) {
         when (p0!!.id) {
             R.id.add_diary_love -> {
-                val dialog = AddDiaryLoveDialog.create("Add Diary love", 2)
+                val dialog = AddDiaryLoveDialog.create("Thêm nhật ký", 2)
                 dialog.listener = this@LoveDiaryFragment
                 dialog.show(parentFragmentManager, "diaryDialog")
             }
@@ -144,7 +144,7 @@ class LoveDiaryFragment : BaseViewModelFragment<FragmentLoveDiaryBinding>(), Vie
                 when (position) {
                     0 -> {
                         val dialog = AddDiaryLoveDialog.createEdit(
-                            "Edit Diary love",
+                            "Chỉnh sửa nhật ký",
                             2,
                             diaryModel
                         )
@@ -196,7 +196,7 @@ class LoveDiaryFragment : BaseViewModelFragment<FragmentLoveDiaryBinding>(), Vie
         mainActivity.showSnackBar(
             SnackBarType.Success,
             resources.getString(R.string.title_success),
-            "Post Successfully"
+            "Đăng thành công"
         )
         viewModel.fetchData()
     }

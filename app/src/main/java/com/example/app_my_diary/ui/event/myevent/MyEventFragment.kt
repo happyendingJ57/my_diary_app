@@ -27,12 +27,12 @@ class MyEventFragment : BaseEventFragment<MyEventViewModel>(),
     }
 
     private val eventDialog by lazy {
-        EventDiaLog.create(isAdd = true, "Add event", eventModel)
+        EventDiaLog.create(isAdd = true, "Thêm sự kiện", eventModel)
     }
 
     val actions = mutableListOf(
-        EventActionModel(R.drawable.ic_action_edit, "Edit event"),
-        EventActionModel(R.drawable.ic_action_delete, "Delete event")
+        EventActionModel(R.drawable.ic_action_edit, "Chỉnh sửa sự kiện"),
+        EventActionModel(R.drawable.ic_action_delete, "Xóa sự kiện")
     )
 
     override fun initView() {
@@ -55,7 +55,7 @@ class MyEventFragment : BaseEventFragment<MyEventViewModel>(),
             it?.let {
                 if (it) {
                     fetchData()
-                    ToastUtils.getInstance(mainActivity).showToast("Delete Event Successfully")
+                    ToastUtils.getInstance(mainActivity).showToast("Xóa sự kiện thành công")
                 }
             }
         }

@@ -68,7 +68,7 @@ class StoryDetailFragment : BaseViewModelFragment<FragmentStoryDetailBinding>(),
                             when (position) {
                                 0 -> {
                                     val editStoryDialog = StoryDialog.create(
-                                        "Edit Story",
+                                        "Chỉnh sửa câu chuyện",
                                         args.eventModel?.eventId!!,
                                         app.storyImageColumns,
                                         mStoryModel

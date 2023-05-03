@@ -51,8 +51,8 @@ class EventDetailFragment : BaseViewModelFragment<FragmentEventDetailBinding>(),
     }
 
     val actions = mutableListOf(
-        EventActionModel(R.drawable.ic_action_edit, "Edit Story"),
-        EventActionModel(R.drawable.ic_action_delete, "Delete Story")
+        EventActionModel(R.drawable.ic_action_edit, "Chỉnh sửa"),
+        EventActionModel(R.drawable.ic_action_delete, "Xóa")
     )
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -81,7 +81,7 @@ class EventDetailFragment : BaseViewModelFragment<FragmentEventDetailBinding>(),
             }
             fabAddStory.clickWithDebounce {
                 val addStoryDialog = StoryDialog.create(
-                    "Add New Story", args.eventModel?.eventId!!, 2
+                    "Thêm mới", args.eventModel?.eventId!!, 2
                 )
                 addStoryDialog.listener = this@EventDetailFragment
                 if (!addStoryDialog.isAdded) {
@@ -152,7 +152,7 @@ class EventDetailFragment : BaseViewModelFragment<FragmentEventDetailBinding>(),
                 when (position) {
                     0 -> {
                         val editStoryDialog = StoryDialog.create(
-                            "Edit Story",
+                            "Chỉnh sửa ",
                             args.eventModel?.eventId!!,
                             2,
                             storyModel
@@ -341,7 +341,7 @@ class EventDetailFragment : BaseViewModelFragment<FragmentEventDetailBinding>(),
 
     override fun onSavedDone() {
         mainActivity.showSnackBar(
-            SnackBarType.Success, resources.getString(R.string.title_success), "Post Successfully"
+            SnackBarType.Success, resources.getString(R.string.title_success), "Đăng thành công"
         )
         viewModel.fetchData()
     }

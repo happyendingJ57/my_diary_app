@@ -96,6 +96,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/dp_10"
                 android:fontFamily="@font/quicksand_medium"
+                android:gravity="center"
                 android:text="@string/string_search_diary_of_love_description"
                 android:textAppearance="@style/TextAppearance.MaterialComponents.Body1"
                 android:textColor="#272727" />
