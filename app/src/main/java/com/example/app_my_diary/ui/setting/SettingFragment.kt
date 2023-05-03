@@ -10,9 +10,6 @@ class SettingFragment : BaseViewModelFragment<FragmentSetttingBinding>() {
     }
 
     override fun initView() {
-        binding?.textViewChangePassword?.setOnClickListener {
-            findNavController().navigate(SettingFragmentDirections.actionSettingFragmentToChangePasswordFragment())
-        }
         binding?.textViewChangeSecondPassword?.setOnClickListener {
             findNavController().navigate(R.id.changeSecondPassword)
         }

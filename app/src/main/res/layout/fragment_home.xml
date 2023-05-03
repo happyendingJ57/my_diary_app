@@ -43,6 +43,21 @@
             android:textStyle="bold" />
 
         <TextView
+            android:id="@+id/text_view_my_event"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginHorizontal="@dimen/dp_50"
+            android:layout_marginTop="@dimen/dp_10"
+            android:background="@drawable/background_button_home"
+            android:gravity="center"
+            android:padding="@dimen/dp_20"
+            android:text="Viết sự kiện"
+            android:textColor="@color/white"
+            android:textSize="@dimen/sp_18"
+            android:textStyle="bold" />
+
+        <TextView
             android:id="@+id/text_view_setting"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"

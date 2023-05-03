@@ -20,9 +20,11 @@ class HomeFragment : BasePermissionFragment<FragmentHomeBinding>() {
             }
         }
         binding?.textViewSetting?.setOnClickListener {
-//            findNavController().navigate(R.id.settingFragment)
-//            findNavController().navigate(R.id.eventFragment)
+            findNavController().navigate(R.id.settingFragment)
+        }
+        binding?.textViewMyEvent?.setOnClickListener {
             findNavController().navigate(NavMainGraphDirections.actionGlobalEventFragment())
+
         }
     }
 
