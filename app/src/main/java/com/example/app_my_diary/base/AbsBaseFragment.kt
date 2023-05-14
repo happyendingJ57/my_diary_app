@@ -8,9 +8,11 @@ import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
 import com.example.app_my_diary.MainActivity
+import com.example.app_my_diary.utils.SharedPreferenceUtils
 
 
 abstract class AbsBaseFragment<V : ViewDataBinding?> : Fragment() {
+    protected lateinit var dataPref: SharedPreferenceUtils
     protected val mainActivity by lazy {
         requireActivity() as MainActivity
     }
@@ -18,6 +20,7 @@ abstract class AbsBaseFragment<V : ViewDataBinding?> : Fragment() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        dataPref = SharedPreferenceUtils.getInstance(requireContext())
     }
 
     override fun onCreateView(

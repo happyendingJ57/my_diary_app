@@ -84,7 +84,7 @@ class MyEventFragment : BaseEventFragment<MyEventViewModel>(),
                     0 -> {
                         val eventDialog = EventDiaLog.create(
                             isAdd = false,
-                            title = "Edit event",
+                            title = "Chỉnh sửa sự kiện",
                             eventModel = eventModel
                         )
                         if (!eventDialog.isAdded) {

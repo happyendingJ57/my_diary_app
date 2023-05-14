@@ -25,7 +25,7 @@ class EventFragment : AbsBaseFragment<FragmentEventBinding>(), EventDiaLog.OnDon
     private var eventModel = EventModel(0, "", "", "", "", "", 0L, 2, 0L)
 
     private val eventDialog by lazy {
-        EventDiaLog.create(isAdd = true,"Add event",eventModel)
+        EventDiaLog.create(isAdd = true,"Thêm sự kiện",eventModel)
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {
