@@ -135,4 +135,8 @@
     <action
         android:id="@+id/action_global_eventFragment"
         app:destination="@id/eventFragment" />
+    <fragment
+        android:id="@+id/setPasswordFragment"
+        android:name="com.example.app_my_diary.ui.set_password.SetPasswordFragment"
+        android:label="SetPasswordFragment" />
 </navigation>

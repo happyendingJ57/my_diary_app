@@ -1,5 +1,6 @@
 package com.example.app_my_diary.ui.profile
 
+import androidx.navigation.fragment.findNavController
 import com.example.app_my_diary.R
 import com.example.app_my_diary.base.AbsBaseFragment
 import com.example.app_my_diary.databinding.FragmentProfileBinding
@@ -10,6 +11,10 @@ class ProfileFragment : AbsBaseFragment<FragmentProfileBinding>() {
     override fun initView() {
         binding?.tvSaveInformation?.setOnClickListener {
             saveUser()
+            findNavController().navigateUp()
+        }
+        binding?.toolbar?.setNavigationOnClickListener{
+            findNavController().navigateUp()
         }
         setUser()
     }
@@ -35,10 +40,10 @@ class ProfileFragment : AbsBaseFragment<FragmentProfileBinding>() {
 
     private fun setUser() {
         val userModel = dataPref.getUserModel()
-        binding?.etFirstName?.setText(userModel.firstName.toString())
-        binding?.etLastName?.setText(userModel.lastName.toString())
-        binding?.etYearOfBirth?.setText(userModel.lastName.toString())
-        binding?.etEmailUser?.setText(userModel.gmail.toString())
-        binding?.etGender?.setText(userModel.gender.toString())
+        binding?.etFirstName?.setText(userModel.firstName)
+        binding?.etLastName?.setText(userModel.lastName)
+        binding?.etYearOfBirth?.setText(userModel.yearOfBirthday)
+        binding?.etEmailUser?.setText(userModel.gmail)
+        binding?.etGender?.setText(userModel.gender)
     }
 }

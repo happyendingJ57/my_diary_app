@@ -12,7 +12,11 @@ class SplashFragment : BaseViewModelFragment<FragmentSplashBinding>() {
 
     override fun initView() {
         binding?.tvTitle?.postDelayed({
-            findNavController().navigate(R.id.secondPasswordFragment)
+            if (dataPref.getBooleanValue("da_co_mat_khau")){
+                findNavController().navigate(R.id.secondPasswordFragment)
+            }else{
+                findNavController().navigate(R.id.setPasswordFragment)
+            }
         }, 1000)
     }
 

@@ -45,21 +45,5 @@
             android:text="Đổi mật khẩu"
             android:textColor="@color/black"
             android:textSize="16sp" />
-
-        <View
-            android:layout_width="match_parent"
-            android:layout_height="@dimen/dp_1"
-            android:layout_marginVertical="@dimen/dp_5"
-            android:background="@color/color_grey" />
-
-        <TextView
-            android:id="@+id/text_view_logout"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/dp_10"
-            android:padding="@dimen/dp_10"
-            android:text="Đăng xuất"
-            android:textColor="@color/black"
-            android:textSize="@dimen/dp_16" />
     </LinearLayout>
 </layout>

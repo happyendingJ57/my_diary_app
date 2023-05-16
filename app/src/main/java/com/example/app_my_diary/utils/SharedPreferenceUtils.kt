@@ -24,13 +24,22 @@ class SharedPreferenceUtils private constructor(context: Context) {
         )
     }
 
-    private fun putStringValue(key: String?, value: String?) {
+    fun putStringValue(key: String?, value: String?) {
         val editor = sharedPreferences.edit()
         editor.putString(key, value).apply()
     }
 
-    private fun getStringValue(key: String?): String? {
+    fun putBooleanValue(key: String?, value: Boolean) {
+        val editor = sharedPreferences.edit()
+        editor.putBoolean(key, value).apply()
+    }
+
+    fun getStringValue(key: String?): String? {
         return sharedPreferences.getString(key, "")
+    }
+
+    fun getBooleanValue(key: String?): Boolean {
+        return sharedPreferences.getBoolean(key, false)
     }
 
     companion object {

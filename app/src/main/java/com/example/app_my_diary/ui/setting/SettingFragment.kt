@@ -11,10 +11,13 @@ class SettingFragment : BaseViewModelFragment<FragmentSetttingBinding>() {
 
     override fun initView() {
         binding?.textViewChangeSecondPassword?.setOnClickListener {
-            findNavController().navigate(R.id.changeSecondPassword)
+            findNavController().navigate(R.id.changePasswordFragment)
         }
         binding?.tvThongTinCaNhan?.setOnClickListener {
             findNavController().navigate(R.id.profileFragment)
+        }
+        binding?.toolbar?.setNavigationOnClickListener{
+            findNavController().navigateUp()
         }
     }
 
